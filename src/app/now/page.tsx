@@ -9,7 +9,7 @@ const page = () => {
          
       </div>
       <section>
-         <h1>Contact</h1>
+         <h1>Outside of work ...</h1>
       </section>
    </div>
       

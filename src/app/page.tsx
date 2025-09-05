@@ -2,9 +2,19 @@ import Header from "@/components/Header/Header"
 
 export default function Home() {
    return (
-      <div className= 'border border-dashed flex justify-center'>
-         <Header />
+      <div>
+         <div className= 'border border-dashed flex justify-center'>
+            <Header />
+
+            
+         </div>
+         <main>
+            <h1 className='font-black text-4xl'>👋🏾 Hi, I'm Fola</h1>
+            <p>I am a software engineer passionate about technology and .I’m a software engineer, builder, and creative thinker working at the intersection of technology, culture, and design.</p>
+            <p>This site  </p>
+         </main>
       </div>
+    
    )
 }
 
