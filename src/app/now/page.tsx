@@ -1,16 +1,18 @@
 import React from 'react'
 import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer'
 const page = () => {
   return (
    <div>
-      <div className= 'border border-dashed flex justify-center'>
+      <header className= 'border border-dashed flex justify-center'>
          <Header />
-
-         
-      </div>
-      <section>
+      </header>
+      <main>
          <h1>Outside of work ...</h1>
-      </section>
+      </main>
+      <footer>
+         <Footer />
+      </footer>
    </div>
       
   )

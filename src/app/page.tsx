@@ -1,18 +1,32 @@
 import Header from "@/components/Header/Header"
-
+import Footer from "@/components/Footer"
 export default function Home() {
    return (
       <div>
-         <div className= 'border border-dashed flex justify-center'>
+         <header className= 'border border-dashed flex justify-center'>
             <Header />
 
             
-         </div>
+         </header>
          <main>
             <h1 className='font-black text-4xl'>👋🏾 Hi, I'm Fola</h1>
-            <p>I am a software engineer passionate about technology and .I’m a software engineer, builder, and creative thinker working at the intersection of technology, culture, and design.</p>
-            <p>This site  </p>
+            <p>
+               I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+            </p>
+            <p>
+               This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+            </p>
+            <p>
+               At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+            </p>
+
+            <div>
+               <h2>Latest posts</h2>
+            </div>
          </main>
+         <div>
+            <Footer />
+         </div>
       </div>
     
    )

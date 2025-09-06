@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from '@/components/Header/Header'
+import Footer from '@/components/Footer'
 const page = () => {
   return (
    <div>
@@ -8,15 +9,43 @@ const page = () => {
 
          
       </div>
-      <section>
-         <h1>About</h1>
+      <main>
+         <h1>About me</h1>
+         <div>//IMAGE</div>
 
-         <p>Hi, My name is Fola. I’m a software engineer with 2 years of experience building full-stack applications, with a strong focus on clean code, AI-powered systems, and data-driven tools. I specialize in turning complex ideas into usable products that balance technical quality with user experience.</p>
-         <p>In my current role within the Clinical Effectivess group in QMUL I’ve built production-ready tools that  for the NHS, designing secure data ingestion systems with React, FastAPI, and SQL Server. Outside of work, I’m developing an AI-powered notes application that lets users query their own files with large language models, and I’m also building Papo Arts Club, a cultural intelligence platform at the intersection of African design and technology.</p>
-         <p>I approach engineering with a balance of product thinking and technical depth. My focus is on writing clean, maintainable code (SOLID, TDD/BDD practices) while always keeping the end user in mind. I believe in continuous learning — from DSA practice and system design to experimenting with LLM-powered applications.</p>
-         <p>Before tech, I lived in New York, the Netherlands, and Vietnam, and played football semi-professionally. That journey gave me resilience, adaptability, and a global perspective that now shapes how I work with teams and approach problem-solving.</p>
 
-      </section>
+         <div>
+            <h1>Who is Fola Majoyegbe?</h1>
+            <p>
+               I was born in Nigeria and grew up in Ireland, two places that shaped both my toughness and my imagination. My degree was in biopharmaceuticals, but football was always my first love. I played semi-pro for a while before realizing my path would take me beyond the pitch.
+            </p>
+            <p>
+               I’ve lived a lot of lives in a short time: a few months in New York, nearly a year in the Netherlands, and two unforgettable years in Vietnam. Living and working in different places around the world has helped me build resilience, adaptability, and a global perspective that now shapes how I work with teams and approach problem-solving.
+            </p>
+            <p>
+               Eventually, I came back, sat down, and taught myself how to code. That decision changed everything. Today, I’m a software engineer by trade — building tools, solving problems, and chasing mastery in tech.
+            </p>
+
+         </div>
+         <div>
+            <h1>Hobbies?</h1>
+            <p>When I'm not at my desk. I like to move. I train calisthenics, and have been recently been pushing myself through Muay Thai. Football is still a big part of my life too, whether I'm playing recreationally or supporting Arsenal(with all the highs and heartbreaks that come with it). 
+
+            </p>
+            <p>
+               Outside of fitness and sport, I also enjoy reading and my current obsession is philosophy and Nietzsche. I am fascinated by how ideas shape culture, creativity, and problem solving. That curiosity feeds directly into engineering and my side project Papo Arts Club – a cultural intelligence platform inspired by African visual arts. It’s where I research, curate, and tell stories about art, design, and fashion from across the continent, blending culture with analysis and technology.
+            </p>
+
+         </div>
+         <div>
+            
+         </div>
+         
+         
+      </main>
+      <footer>
+         <Footer />
+      </footer>
    </div>
       
   )
