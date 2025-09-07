@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const Menu = () => {
    return (
-      <div className= 'flex justify-between border w-full'>
-         <div>
+      <div className= ''>
+         {/* <div>
             <p>CLI thing</p>
-         </div>
+         </div> */}
 
          <div>
             <ul className='flex gap-10'>
@@ -14,15 +14,14 @@ const Menu = () => {
                <li><Link href='/projects'>PROJECTS</Link></li>
                <li><Link href='/blog'>BLOG</Link></li>
                <li><Link href='/contact'>CONTACT</Link></li>
-               <li><Link href='/contact'>NOW</Link></li>
+               <li><Link href='/now'>NOW</Link></li>
 
-               
             </ul>
          </div>
 
-         <div>
+         {/* <div>
             🔅
-         </div>
+         </div> */}
       </div>
    )
 }
