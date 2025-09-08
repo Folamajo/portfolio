@@ -1,12 +1,18 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Menu from './Menu'
 import Name from './Name'
+import { usePathname } from 'next/navigation'
+
 const Header = () => {
-   
+   const [pageName, setPageName] = useState<string>("")
+   const pathname= usePathname()
+
+   // setPageName(usePathname)
    return (
          <div className='flex flex-col items-center border w-[60em]'>
-            <Name />
-            <Menu />
+            <Name pageName={pageName}/>
+            <Menu setPageName={setPageName}/>
          </div>
    )
 }

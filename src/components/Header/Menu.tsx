@@ -1,7 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Menu = () => {
+type MenuProps ={
+   setPageName: React.Dispatch<React.SetStateAction<string>>
+}
+
+
+const Menu = ({ setPageName } : MenuProps) => {
+
+
    return (
       <div className= ''>
          {/* <div>
@@ -10,7 +17,7 @@ const Menu = () => {
 
          <div>
             <ul className='flex gap-10'>
-               <li><Link href='/about'>ABOUT</Link></li>
+               <li><Link href='/about' onClick={()=>setPageName("about")}>ABOUT</Link></li>
                <li><Link href='/projects'>PROJECTS</Link></li>
                <li><Link href='/blog'>BLOG</Link></li>
                <li><Link href='/contact'>CONTACT</Link></li>
