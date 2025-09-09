@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 
 const Header = () => {
    const [pageName, setPageName] = useState<string>("")
-   const pathname= usePathname()
-
+   // const pathname= usePathname()
+   // console.log(pathname)
    // setPageName(usePathname)
    return (
          <div className='flex flex-col items-center border w-[60em]'>
