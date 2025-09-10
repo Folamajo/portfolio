@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 // import { usePathname } from 'next/navigation'
-
-
+import { useTheme } from 'next-themes'
+import { PiMoonThin } from "react-icons/pi";
 
 type MenuProps ={
    setPageName: React.Dispatch<React.SetStateAction<string>>
@@ -10,7 +10,7 @@ type MenuProps ={
 
 
 const Menu = ({ setPageName } : MenuProps) => {
-
+   // const {theme, setTheme} = useTheme()
    // const pathname = usePathname();
    return (
       <div className= ''>
@@ -53,9 +53,12 @@ const Menu = ({ setPageName } : MenuProps) => {
             </ul>
          </div>
 
-         {/* <div>
-            🔅
+         {/* <div onClick={()=>setTheme(theme === "light" ? "dark")}>
+            
          </div> */}
+         {/* <button>
+            <PiMoonThin></PiMoonThin>
+         </button> */}
       </div>
    )
 }

@@ -2,30 +2,37 @@ import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
 export default function Home() {
    return (
-      <div>
-         <header className= 'border border-dashed flex justify-center'>
+      <div className="flex flex-col items-center border border-dashed min-h-screen">
+         <header className= 'border border-dashed w-full flex justify-center '>
             <Header />
-
-            
          </header>
-         <main>
-            <h1 className='font-black text-4xl'>👋🏾 Hi, I'm Fola</h1>
-            <p>
-               I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-            </p>
-            <p>
-               This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-            </p>
-            <p>
-               At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-            </p>
+         <main className='w-[60em] mt-20'>
+            <h1 className='font-black text-4xl '>👋🏾 Hello, I'm Fola</h1>
+            <div className= "mt-6">
+               <p>
+                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+               </p>
+               <p className="mt-4">
+                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+               </p>
+               <p className="mt-4">
+                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+               </p>
+               <p className="mt-4">
+                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+               </p>
+            </div>
+            
 
-            <div>
-               <h2>Latest posts</h2>
+            <div className= "mt-6">
+               <h2 className="text-2xl font-black">Latest posts</h2>
             </div>
          </main>
-         <div>
-            <Footer />
+         <div className="border border-dashed w-full flex justify-center mt-auto py-6">
+            <div className="w-[60em] ">
+               <Footer />
+            </div>
+            
          </div>
       </div>
     

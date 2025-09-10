@@ -10,7 +10,7 @@ const Header = () => {
    // console.log(pathname)
    // setPageName(usePathname)
    return (
-         <div className='flex flex-col items-center border w-[60em]'>
+         <div className='flex flex-col items-center border w-[60em] bg-white text=black dark:bg-gray-800 dark:text-white transition-all duration-300'>
             <Name pageName={pageName}/>
             <Menu setPageName={setPageName}/>
          </div>
