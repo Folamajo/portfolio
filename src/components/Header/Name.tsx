@@ -17,13 +17,16 @@ const Name = ({ pageName } : NameProps) => {
    // const [pageName, setPageName] = useState<string>("")
 
    return (
-      <div className='p-2 flex justify-between border w-full'>
-         <div className='border flex items-center w-72'>
+      <div className='p-2 flex  border w-full'>
+         <div className='border flex items-center '>
             <p>fola@website {cleanedPathName ? cleanedPathName : '~'} % </p><p> {pageName}</p><div className='blinking_cursor'></div> 
          </div>
-         <h1 className='text-4xl font-black '>Fola Majoyegbe</h1>
+         <div className="mx-auto">
+           <h1 className='text-4xl font-black '>Fola Majoyegbe</h1> 
+         </div>
+         
 
-         <div className='border flex items-center'>
+         <div className='border flex items-center ml-auto'>
             <button>
                {theme}
             </button>

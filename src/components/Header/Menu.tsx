@@ -10,13 +10,10 @@ type MenuProps ={
 
 
 const Menu = ({ setPageName } : MenuProps) => {
-   // const {theme, setTheme} = useTheme()
-   // const pathname = usePathname();
+
    return (
       <div className= ''>
-         {/* <div>
-            <p>CLI thing</p>
-         </div> */}
+
 
          <div>
             <ul className='flex gap-10'>
@@ -53,12 +50,7 @@ const Menu = ({ setPageName } : MenuProps) => {
             </ul>
          </div>
 
-         {/* <div onClick={()=>setTheme(theme === "light" ? "dark")}>
-            
-         </div> */}
-         {/* <button>
-            <PiMoonThin></PiMoonThin>
-         </button> */}
+
       </div>
    )
 }
