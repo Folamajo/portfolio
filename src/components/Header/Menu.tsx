@@ -21,31 +21,31 @@ const Menu = ({ setPageName } : MenuProps) => {
                   <Link href='/about' 
                         onMouseEnter={()=>setPageName('cd about')}
                         onMouseLeave={()=>setPageName("")}
-                  >ABOUT</Link>
+                  >about<span>/</span></Link>
                </li>
                <li>
                   <Link href='/projects'
                         onMouseEnter={()=>setPageName('cd projects')}
                         onMouseLeave={()=>setPageName("")}
-                  >PROJECTS</Link>
+                  >projects<span>/</span></Link>
                </li>
                <li>
                   <Link href='/blog'
                         onMouseEnter={()=>setPageName('cd blog')}
                         onMouseLeave={()=>setPageName("")}
-                  >BLOG</Link>
+                  >blog<span>/</span></Link>
                </li>
                <li>
                   <Link href='/contact'
                         onMouseEnter={()=>setPageName('cd contact')}
                         onMouseLeave={()=>setPageName("")}
-                  >CONTACT</Link>
+                  >contact<span>/</span></Link>
                </li>
                <li>
                   <Link href='/now'
                         onMouseEnter={()=>setPageName('cd now')}
                         onMouseLeave={()=>setPageName("")}   
-                  >NOW</Link></li>
+                  >now<span>/</span></Link></li>
 
             </ul>
          </div>
