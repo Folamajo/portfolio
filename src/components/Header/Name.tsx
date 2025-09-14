@@ -34,6 +34,7 @@ const Name = ({ pageName } : NameProps) => {
 
          <div className=' ml-auto ' >
             <button className = "border ml-auto">
+               {/* Work on this tomorrow */}
                {theme}
             </button>
          </div>
