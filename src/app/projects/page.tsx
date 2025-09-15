@@ -1,6 +1,8 @@
 import React from 'react'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer'
+
+
 const page = () => {
   return (
   <div className="flex flex-col items-center border border-dashed h-screen">

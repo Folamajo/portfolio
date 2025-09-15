@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import ObserverProvider from "./providers/observer/ObserverProvider";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,7 +36,12 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-         <ThemeProvider attribute='class' enableSystem defaultTheme="system">{children}</ThemeProvider>
+         <ThemeProvider attribute='class' enableSystem defaultTheme="system">
+            <ObserverProvider>
+               {children}
+            </ObserverProvider>
+         </ThemeProvider>
+         
       </body>
     </html>
   );
