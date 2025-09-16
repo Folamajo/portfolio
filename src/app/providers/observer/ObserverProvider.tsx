@@ -9,7 +9,18 @@ type Payload = {
 const ObserverContext = createContext<Payload | undefined>(undefined)
 
 const ObserverProvider = ({children} : any) => {
-   const observerValue:Payload = {register(element, callback), unregister(element)}
+
+   const storage = new Map<Element, (entry: IntersectionObserverEntry) => void>();
+   
+   
+   const observerValue:Payload = {
+      register : (element, callback)=>{
+         return
+      }, 
+      unregister: (element)=>{
+         return
+      }
+   }
 
 
 
