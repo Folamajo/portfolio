@@ -1,5 +1,8 @@
-import React from 'react'
+"use client"
+
+import React, { useRef } from 'react'
 import { createContext } from 'react'
+
 
 type Payload = {
    register: (element: Element, callback: (entry: IntersectionObserverEntry) => void) => void;
@@ -10,7 +13,8 @@ const ObserverContext = createContext<Payload | undefined>(undefined)
 
 const ObserverProvider = ({children} : any) => {
 
-   const storage = new Map<Element, (entry: IntersectionObserverEntry) => void>();
+   const storageRef = useRef<Map<Element, (entry: IntersectionObserverEntry) => void>>(new Map());
+   const intersectionObserverRef = useRef<IntersectionObserver | null >(null)
    
    
    const observerValue:Payload = {
@@ -21,8 +25,6 @@ const ObserverProvider = ({children} : any) => {
          return
       }
    }
-
-
 
   return (
     
