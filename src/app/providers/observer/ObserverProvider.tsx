@@ -11,6 +11,12 @@ type Payload = {
 
 const ObserverContext = createContext<Payload | undefined>(undefined)
 
+
+
+
+
+
+
 const ObserverProvider = ({children} : any) => {
 
    const storageRef = useRef<Map<Element, (entry: IntersectionObserverEntry) => void>>(new Map());
@@ -24,11 +30,16 @@ const ObserverProvider = ({children} : any) => {
       register : (element, callback)=>{
          if(intersectionObserverRef.current == null){
             let observer = new IntersectionObserver((entries)=>{
-               for (let entry of entries){
-                  if(storageRef.current.get(entry.target)){
 
-                  }
-               }
+               entries.forEach(entry => {
+                  if
+
+               })
+               // for (let entry of entries){
+               //    if(storageRef.current.get(entry.target)){
+
+               //    }
+               // }
             }, {})
             intersectionObserverRef.current = observer
          }
