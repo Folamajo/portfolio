@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Link from 'next/link'
 // import { usePathname } from 'next/navigation'
 import { useTheme } from 'next-themes'
 import { PiMoonThin } from "react-icons/pi";
+import { ObserverContext } from '@/app/context/ObserverProvider';
 
 type MenuProps ={
    setPageName: React.Dispatch<React.SetStateAction<string>>
@@ -10,12 +11,16 @@ type MenuProps ={
 
 
 const Menu = ({ setPageName } : MenuProps) => {
-
+   const observer = useContext(ObserverContext)
    return (
       <div className= ''>
 
 
          <div>
+            {
+               !observer?.isInView ? <div>Fola Majoyegbe</div> : ""
+            }
+            
             <ul className='flex gap-10'>
                <li>
                   <Link href='/about' 

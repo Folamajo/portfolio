@@ -1,19 +1,31 @@
-import React, {createContext, useRef, ReactNode, useState} from 'react'
+"use client"
+import React, {createContext, useRef, ReactNode, useState, useEffect} from 'react'
 
 
 type IntersectionConfig = {
-   observe : (element: Element) => void;
+   observe : (element: HTMLDivElement) => void;
+
+   isInView?: boolean;
 }
-const ObserverContext = createContext<IntersectionConfig, boolean,  undefined, boolean>(undefined);
+export const ObserverContext = createContext<IntersectionConfig | undefined>(undefined);
 
 const ObserverProvider = ({children} : {children: ReactNode}) => {
 
    const [isInView, setIsInView] = useState<boolean>(true)
 
-   const callback: IntersectionObserverCallback = () => {}
+   const callback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry) => {
+         if (entry.isIntersecting){
+            setIsInView(true)
+         }
+         else{
+            setIsInView(false)
+         }
+      })
+   }
 
    const intersectionOperation: IntersectionConfig = {
-      observe: (element:Element) => {
+      observe: (element:HTMLDivElement) => {
          if (intersectionObserverRef.current === null){
             const intersectionObserver = new IntersectionObserver(callback);
             intersectionObserverRef.current = intersectionObserver;
@@ -24,13 +36,29 @@ const ObserverProvider = ({children} : {children: ReactNode}) => {
             intersectionObserverRef.current.observe(element);
          }
          return
-      }
+      },
+
+      isInView: isInView
    }
+
+
+
 
    const intersectionObserverRef= useRef<IntersectionObserver | null>(null)
 
+
+   useEffect(()=> {
+
+      return () => {
+         intersectionObserverRef.current?.disconnect()
+         intersectionObserverRef.current = null
+      }
+   }, [])
+
+
+
    return (
-      <ObserverContext.Provider value = {intersectionOperation, isInView}>
+      <ObserverContext.Provider value = { intersectionOperation }>
          {children}
       </ObserverContext.Provider>
    )
