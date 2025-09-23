@@ -23,8 +23,8 @@ const Header = () => {
 
 
    return (
-         <div className=' border flex flex-col items-center   bg-white text=black dark:bg-gray-800 dark:text-white transition-all duration-300'>         
-            <div ref = {elementToObserveRef} className="border border-dashed w-full">
+         <div className=' border flex flex-col items-center w-full bg-white text=black dark:bg-gray-800 dark:text-white transition-all duration-300'>         
+            <div ref = {elementToObserveRef} className="border border-dashed ">
                <Name pageName={pageName}/>
             </div>
             

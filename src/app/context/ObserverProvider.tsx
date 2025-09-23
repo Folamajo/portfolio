@@ -16,10 +16,10 @@ const ObserverProvider = ({children} : {children: ReactNode}) => {
    const callback: IntersectionObserverCallback = (entries) => {
       entries.forEach((entry) => {
          if (entry.isIntersecting){
-            setIsInView(true)
+            setIsInView(true);
          }
          else{
-            setIsInView(false)
+            setIsInView(false);
          }
       })
    }
@@ -44,14 +44,14 @@ const ObserverProvider = ({children} : {children: ReactNode}) => {
 
 
 
-   const intersectionObserverRef= useRef<IntersectionObserver | null>(null)
+   const intersectionObserverRef= useRef<IntersectionObserver | null>(null);
 
 
    useEffect(()=> {
 
       return () => {
-         intersectionObserverRef.current?.disconnect()
-         intersectionObserverRef.current = null
+         intersectionObserverRef.current?.disconnect();
+         intersectionObserverRef.current = null;
       }
    }, [])
 
@@ -69,4 +69,4 @@ export default ObserverProvider
 
 
 
-   // const observerInstanceRef = useRef(null)
+  

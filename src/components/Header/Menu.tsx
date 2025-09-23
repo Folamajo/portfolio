@@ -13,15 +13,14 @@ type MenuProps ={
 const Menu = ({ setPageName } : MenuProps) => {
    const observer = useContext(ObserverContext)
    return (
-      <div className= ''>
-
-
-         <div>
+      <div className= 'border w-full flex justify-center py-4'>
+         <div className="flex border w-[60em] justify-center">
             {
-               !observer?.isInView ? <div>Fola Majoyegbe</div> : ""
+               !observer?.isInView ? <div className="">Fola Majoyegbe</div> : ""
             }
             
-            <ul className='flex gap-10'>
+            <div className=" border">
+               <ul className='flex gap-10'>
                <li>
                   <Link href='/about' 
                         onMouseEnter={()=>setPageName('cd about')}
@@ -53,6 +52,9 @@ const Menu = ({ setPageName } : MenuProps) => {
                   >now<span>/</span></Link></li>
 
             </ul>
+
+            </div>
+            
          </div>
 
 
