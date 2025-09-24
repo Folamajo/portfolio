@@ -19,16 +19,17 @@ const Header = () => {
       }
       
    }, [])
-   // console.log(observer?.isInView)
 
 
    return (
-         <div className=' border flex flex-col items-center w-full bg-white text=black dark:bg-gray-800 dark:text-white transition-all duration-300'>         
-            <div ref = {elementToObserveRef} className="border border-dashed ">
+         <div className=' flex flex-col items-center w-full bg-white dark:bg-gray-800 dark:text-white transition-all duration-300 border-b border-b-gray-300'>         
+            <div ref = {elementToObserveRef} className=" ">
                <Name pageName={pageName}/>
             </div>
+            <div className={!observer?.isInView ? "fixed  w-full border-b border-b-gray-300" : "" }>
+               <Menu setPageName={setPageName}/>
+            </div>
             
-            <Menu setPageName={setPageName}/>
          </div>
    )
 }

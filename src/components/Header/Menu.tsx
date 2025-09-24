@@ -13,39 +13,47 @@ type MenuProps ={
 const Menu = ({ setPageName } : MenuProps) => {
    const observer = useContext(ObserverContext)
    return (
-      <div className= 'border w-full flex justify-center py-4'>
-         <div className="flex border w-[60em] justify-center">
+      <div className= ' w-full flex justify-center items-center relative bg-white'>
+         <div className="w-[60em] relative flex justify-center items-center py-6">
+
+
+         
             {
-               !observer?.isInView ? <div className="">Fola Majoyegbe</div> : ""
+               !observer?.isInView ? <div className="absolute left-2 font-bold text-lg">Fola Majoyegbe</div> : ""
             }
             
-            <div className=" border">
+             {/* <div className = "border border-dashed mr-auto">
+               Fola Majoyegbe
+             </div> */}
+
+
+            <div className="  mx-auto absolute left-1/2 transform -translate-x-1/2">
                <ul className='flex gap-10'>
-               <li>
+               <li className= "hover:opacity-70">
                   <Link href='/about' 
                         onMouseEnter={()=>setPageName('cd about')}
                         onMouseLeave={()=>setPageName("")}
                   >about<span>/</span></Link>
                </li>
-               <li>
+               <li className= "hover:opacity-70">
                   <Link href='/projects'
                         onMouseEnter={()=>setPageName('cd projects')}
                         onMouseLeave={()=>setPageName("")}
                   >projects<span>/</span></Link>
                </li>
-               <li>
+               <li className= "hover:opacity-70">
                   <Link href='/blog'
                         onMouseEnter={()=>setPageName('cd blog')}
                         onMouseLeave={()=>setPageName("")}
                   >blog<span>/</span></Link>
                </li>
-               <li>
+               <li className= "hover:opacity-70">
                   <Link href='/contact'
                         onMouseEnter={()=>setPageName('cd contact')}
                         onMouseLeave={()=>setPageName("")}
                   >contact<span>/</span></Link>
                </li>
-               <li>
+               <li className= "hover:opacity-70">
                   <Link href='/now'
                         onMouseEnter={()=>setPageName('cd now')}
                         onMouseLeave={()=>setPageName("")}   
@@ -56,9 +64,10 @@ const Menu = ({ setPageName } : MenuProps) => {
             </div>
             
          </div>
-
-
       </div>
+
+
+    
    )
 }
 
