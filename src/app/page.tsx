@@ -6,7 +6,7 @@ export default function Home() {
          <header className= ' w-full flex justify-center  '>
             <Header />
          </header>
-         <main className='w-[60em] mt-20'>
+         <main className='w-[60em] mt-20 mb-6'>
             <h1 className='font-black text-4xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>
@@ -121,8 +121,10 @@ export default function Home() {
                <h2 className="text-2xl font-black">Latest posts</h2>
             </div>
          </main>
-         <div className=" w-full flex justify-center mt-auto py-6">
-            <div className="w-[60em] ">
+
+
+         <div className=" w-full flex justify-center mt-auto py-6 bg-gray-100">
+            <div className="w-[60em] text-gray-500">
                <Footer />
             </div>
             
