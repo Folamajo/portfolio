@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "next-themes";
+
 import ObserverProvider from "./context/ObserverProvider";
+import ThemeProvider from "./context/ThemeProvider";
 // import ObserverProvider from "./providers/observer/ObserverProvider";
 
 const geistSans = Geist({
@@ -37,7 +39,12 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased`}
       >
-         <ThemeProvider attribute='class' enableSystem defaultTheme="system">
+         <ThemeProvider 
+            attribute='class' 
+            enableSystem 
+            defaultTheme="system"
+            disableTransitionOnChange
+         >
             <ObserverProvider>
                {children}
             </ObserverProvider>
