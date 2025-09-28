@@ -5,7 +5,7 @@ const Footer = () => {
 
 
    return (
-         <div>
+         <div className=" dark:bg-black ">
             <p>Last updated {new Date(siteConfig.lastUpdated).toLocaleString("en-GB", {
                timeZone: "Europe/London",
                day: "2-digit",

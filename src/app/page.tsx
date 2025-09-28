@@ -123,8 +123,8 @@ export default function Home() {
          </main>
 
 
-         <div className=" w-full flex justify-center mt-auto py-6 bg-gray-100">
-            <div className="w-[60em] text-gray-500">
+         <div className=" w-full flex justify-center mt-auto py-6 ">
+            <div className="w-[60em] ">
                <Footer />
             </div>
             
