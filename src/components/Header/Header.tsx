@@ -26,7 +26,7 @@ const Header = () => {
             <div ref = {elementToObserveRef} className=" ">
                <Name pageName={pageName}/>
             </div>
-            <div className={!observer?.isInView ? "fixed  w-full border-b border-b-gray-600 bg-black" : "" }>
+            <div className={!observer?.isInView ? "fixed  w-full border-b border-b-gray-600 bg-white dark:text-white dark:bg-black" : "" }>
                <Menu setPageName={setPageName}/>
             </div>
             

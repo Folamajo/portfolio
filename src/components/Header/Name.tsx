@@ -4,6 +4,7 @@ import React, { SetStateAction, useState } from 'react'
 import { BiMoon } from "react-icons/bi";
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
+import Toggle from './Toggle';
 // type NameProps ={
 //    setPageName: React.Dispatch<React.SetStateAction<string>>
 // }
@@ -15,7 +16,7 @@ const Name = ({ pageName } : NameProps) => {
    const pathName= usePathname()
    const cleanedPathName = pathName.replace("/", "" )
    const {theme, setTheme} = useTheme()
-   // const [pageName, setPageName] = useState<string>("")
+
    
 
    return (
@@ -23,8 +24,6 @@ const Name = ({ pageName } : NameProps) => {
          <div className=' flex w-[18em]'>
             <p>fola@website {cleanedPathName ? cleanedPathName : '~'} %</p> <p>{pageName}</p> <p></p><div className='blinking_cursor'></div> 
          </div>
-
-
 
          <div className=" absolute  flex left-1/2 transform -translate-x-1/2">
            <h1 className='text-4xl font-black '>
@@ -36,10 +35,7 @@ const Name = ({ pageName } : NameProps) => {
          
 
          <div className=' ml-auto ' >
-            <button onClick = {()=> setTheme(prev => prev === "light" ? "dark": "light")}className = "border ml-auto">
-   
-               toggle
-            </button>
+            <Toggle />
          </div>
       </div>
    )

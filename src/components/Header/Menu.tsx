@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useTheme } from 'next-themes'
 import { PiMoonThin } from "react-icons/pi";
 import { ObserverContext } from '@/app/context/ObserverProvider';
+import Toggle from './Toggle';
 
 type MenuProps ={
    setPageName: React.Dispatch<React.SetStateAction<string>>
@@ -62,6 +63,9 @@ const Menu = ({ setPageName } : MenuProps) => {
             </ul>
 
             </div>
+            {
+               !observer?.isInView ? <div className="absolute right-2 font-bold text-lg"><Toggle /></div> : ""
+            }
             
          </div>
       </div>
