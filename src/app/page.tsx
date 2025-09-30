@@ -6,8 +6,11 @@ export default function Home() {
          <header className= ' w-full flex justify-center  '>
             <Header />
          </header>
+         {/* <div className= "w-10 border h-10 dark:bg-amber-400">
+            
+         </div> */}
          <main className='w-[60em] mt-20 mb-6'>
-            <h1 className='font-black text-4xl'>👋🏾 Hello, I'm Fola</h1>
+            <h1 className='font-black text-4xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>
                   I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.

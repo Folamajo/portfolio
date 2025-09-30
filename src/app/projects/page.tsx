@@ -5,7 +5,7 @@ import Footer from '@/components/Footer'
 
 const page = () => {
   return (
-  <div className="flex flex-col items-center border border-dashed h-screen">
+  <div className="flex flex-col items-center border border-dashed h-screen ">
      
          <header className= 'border border-dashed w-full flex justify-center '>
             <Header />

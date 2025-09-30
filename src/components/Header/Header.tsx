@@ -22,11 +22,11 @@ const Header = () => {
 
 
    return (
-         <div className=' dark:bg-black dark:text-white flex flex-col items-center w-full transition-all duration-300 border-b border-b-gray-700  dark:border-b-gray-500' >         
+         <div className='  flex flex-col items-center w-full transition-all duration-300 border-b border-b-gray-300 dark:border-b-gray-700 ' >         
             <div ref = {elementToObserveRef} className=" ">
                <Name pageName={pageName}/>
             </div>
-            <div className={!observer?.isInView ? "fixed  w-full border-b border-b-gray-600 bg-white dark:text-white dark:bg-black" : "" }>
+            <div className={!observer?.isInView ? "fixed  w-full border-b bg-white border-b-gray-300 dark:border-b-gray-700  dark:bg-black" : "" }>
                <Menu setPageName={setPageName}/>
             </div>
             

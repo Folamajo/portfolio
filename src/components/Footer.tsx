@@ -6,14 +6,15 @@ const Footer = () => {
 
    return (
          <div className=" dark:bg-black ">
-            <p>Last updated {new Date(siteConfig.lastUpdated).toLocaleString("en-GB", {
+            © 2025 - 2025 Fola Majoyegbe
+            {/* <p>Last updated {new Date(siteConfig.lastUpdated).toLocaleString("en-GB", {
                timeZone: "Europe/London",
                day: "2-digit",
                month: "2-digit",
                year: "numeric",
                hour: "2-digit",
                minute: "2-digit"
-            })} BST</p> 
+            })} BST</p>  */}
             
          </div>
    )
