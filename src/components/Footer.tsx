@@ -5,8 +5,8 @@ const Footer = () => {
 
 
    return (
-         <div className=" dark:bg-black ">
-            © 2025 - 2025 Fola Majoyegbe
+         <div className="    text-gray-400 text-[0.8em]">
+            © 2025 Fola Majoyegbe
             {/* <p>Last updated {new Date(siteConfig.lastUpdated).toLocaleString("en-GB", {
                timeZone: "Europe/London",
                day: "2-digit",

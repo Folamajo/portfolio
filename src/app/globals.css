@@ -35,7 +35,7 @@ body {
 }
 
 .blinking_cursor{
-   background-color:black;
+   /* background-color:black; */
    width: 0.6em;
    height: 1.4em;
    animation: blink 1s infinite

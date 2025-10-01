@@ -22,7 +22,7 @@ const Name = ({ pageName } : NameProps) => {
    return (
       <div className=' p-2 flex items-center justify-between  w-[60em] relative '>
          <div className=' flex w-[18em]'>
-            <p>fola@website {cleanedPathName ? cleanedPathName : '~'} %</p> <p>{pageName}</p> <p></p><div className='blinking_cursor dark:bg-amber-300'></div> 
+            <p>fola@website {cleanedPathName ? cleanedPathName : '~'} %</p>       <p className="ml-2">{pageName}</p> <div className='blinking_cursor dark:bg-white'></div> 
          </div>
 
          <div className=" absolute  flex left-1/2 transform -translate-x-1/2">
