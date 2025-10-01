@@ -34,19 +34,35 @@ body {
   padding:0;
 }
 
+
+
+/* @keyframes blink {
+   0%, 100%{ background-color: transparent; }
+   50% { background-color: black; }
+} */
+
+@keyframes blink {
+   0%, 100% {background-color: var(--bg-start-end)}
+   50% {background-color: var(--bg-middle)}
+}
+
 .blinking_cursor{
    /* background-color:black; */
+
+   --bg-start-end: transparent;
+   --bg-middle: black;
    width: 0.6em;
    height: 1.4em;
    animation: blink 1s infinite
 }
 
-@keyframes blink {
-   0%, 100%{
-      background-color: transparent;
-   }
-   50% {
-      background-color: black;
-   }
+.dark .blinking_cursor{
+   /* background-color:black; */
+
+   --bg-start-end: transparent;
+   --bg-middle: white;
+   width: 0.6em;
+   height: 1.4em;
+   animation: blink 1s infinite
 }
 
