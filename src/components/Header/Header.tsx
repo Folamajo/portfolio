@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Menu from './Menu'
 import Name from './Name'
-import { usePathname } from 'next/navigation'
+
 import { ObserverContext } from '@/app/context/ObserverProvider'
 import { useRef } from 'react'
 
