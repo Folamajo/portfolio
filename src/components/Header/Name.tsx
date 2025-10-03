@@ -21,12 +21,12 @@ const Name = ({ pageName } : NameProps) => {
 
    return (
       <div className=' p-2 flex items-center justify-between  w-[60em] relative '>
-         <div className=' flex w-[18em]'>
-            <p>fola@website {cleanedPathName ? cleanedPathName : '~'} %</p>       <p className="ml-2">{pageName}</p> <div className='blinking_cursor '></div> 
+         <div className=' flex w-[21em] '>
+            <p className="mono font-bold text-[1.2em]">fola@website {cleanedPathName ? cleanedPathName : '~'} %</p>       <p className="ml-1 mono text-[1.2em]">{pageName}</p> <div className='blinking_cursor '></div> 
          </div>
 
          <div className=" absolute  flex left-1/2 transform -translate-x-1/2">
-           <h1 className='text-4xl font-black '>
+           <h1 className='text-3xl font-black '>
                <Link href="/">
                   Fola Majoyegbe
                </Link>

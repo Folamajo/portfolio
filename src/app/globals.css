@@ -34,6 +34,10 @@ body {
   padding:0;
 }
 
+.mono{
+   font-family: monospace;
+}
+
 
 
 /* @keyframes blink {

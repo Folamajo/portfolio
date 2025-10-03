@@ -10,7 +10,7 @@ const Toggle = () => {
       <div>
          <button onClick = {()=> setTheme(prev => prev === "light" ? "dark": "light")}className = " ml-auto hover:cursor-pointer">
                {
-                  theme === "light" ? <PiMoonLight className="text-2xl hover:opacity-70"/> : <PiSunLight className="text-2xl hover:opacity-80" />
+                  theme === "light" ? <PiMoonLight className="text-2xl hover:opacity-80"/> : <PiSunLight className="text-2xl hover:opacity-90" />
                } 
          </button>
          
