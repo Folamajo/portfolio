@@ -26,7 +26,7 @@ const Name = ({ pageName } : NameProps) => {
          </div>
 
          <div className=" absolute  flex left-1/2 transform -translate-x-1/2">
-           <h1 className='text-3xl font-black '>
+           <h1 className='text-3xl font-bold tracking-tight'>
                <Link href="/">
                   Fola Majoyegbe
                </Link>
