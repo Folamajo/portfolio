@@ -9,7 +9,7 @@ export default function Home() {
          {/* <div className= "w-10 border h-10 dark:bg-amber-400">
             
          </div> */}
-         <main className='w-[60em] mt-20 mb-6'>
+         <main className=' max-w-[60em] mt-20 mb-6 border border-dashed px-4'>
             <h1 className='font-black text-4xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>

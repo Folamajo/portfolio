@@ -25,7 +25,7 @@ const Menu = ({ setPageName } : MenuProps) => {
              </div> */}
 
 
-            <div className="  mx-auto absolute left-1/2 transform -translate-x-1/2 text-[0.9em]">
+            <div className="  mx-auto absolute left-1/2 transform -translate-x-1/2 text-[0.8em]">
                <ul className='flex gap-10'>
                <li className= "hover:opacity-70">
                   <Link href='/about' 
