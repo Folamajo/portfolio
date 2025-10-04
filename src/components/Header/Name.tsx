@@ -20,10 +20,10 @@ const Name = ({ pageName } : NameProps) => {
    
 
    return (
-      <div className= "border  ">
-         <div className=' pt-4 px-4 flex items-center justify-between  max-w-[60em] relative border mx-auto'>
+      <div className= " ">
+         <div className=' pt-4 px-4 flex items-center justify-between  max-w-[60em] relative mx-auto'>
             <div className=' flex w-[21em]'>
-               <p className="mono font-bold text-[1.2em]">fola@website {cleanedPathName ? cleanedPathName : '~'} %</p>       <p className="ml-1 mono text-[1.2em]">{pageName}</p> <div className='blinking_cursor '></div> 
+               <p className="mono font-bold text-[1.2em]">fola@website {cleanedPathName ? cleanedPathName : '~'} %</p>  <p className="ml-1 mono text-[1.2em]">{pageName}</p> <div className='blinking_cursor '></div> 
             </div>
 
             <div className=" absolute  flex left-1/2 transform -translate-x-1/2">

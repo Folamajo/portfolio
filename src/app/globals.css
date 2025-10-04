@@ -40,6 +40,25 @@ body {
 
 
 
+@media (max-width: 991px){
+   .main_menu{
+      display: none;
+   }
+   .main_content{
+      padding-top: 7.7em;
+   }
+}
+
+@media (min-width: 991px){
+   .menu_two{
+      display:none;
+   }
+   .main_content{
+      padding-top: 2em;
+   }
+}
+
+
 /* @keyframes blink {
    0%, 100%{ background-color: transparent; }
    50% { background-color: black; }

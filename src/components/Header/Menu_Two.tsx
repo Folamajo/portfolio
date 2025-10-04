@@ -1,31 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { RxHamburgerMenu } from "react-icons/rx";
 
 
-
 const Menu_Two = () => {
+   const [openSideBar, setOpenSideBar] = useState<boolean>(false)
+   useEffect(()=>{
+
+      console.log(openSideBar)
+   }, [openSideBar])
+
+   
   return (
-      <div className= "border  ">
-         <div className=' px-6 py-2 flex max-w-[60em] border mx-auto'>
+      <div>
+         <div className=' px-6 py-3 flex max-w-[60em] mx-auto'>
 
 
-            <div className="  mr-auto">
-               <h1 className='text-2xl font-bold tracking-tight'>
-                  <Link href="/">
-                     Fola Majoyegbe
-                  </Link>
-               </h1>
+               <div className="  mr-auto">
+                  <h1 className='text-2xl font-bold tracking-tight'>
+                     <Link href="/">
+                        Fola Majoyegbe
+                     </Link>
+                  </h1>
+               </div>
+               
+
+               <div className=' ml-auto ' >
+                  <RxHamburgerMenu className="text-2xl cursor-pointer hover:opacity-80 " onClick={()=>setOpenSideBar(prev => !prev)}/>
+               </div>
             </div>
-            
 
-            <div className=' ml-auto ' >
-               <RxHamburgerMenu className="text-2xl cursor-pointer hover:opacity-80"/>
-            </div>
          </div>
-
-      </div>
-  )
+   )
 }
 
 export default Menu_Two

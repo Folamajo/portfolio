@@ -24,13 +24,13 @@ const Header = () => {
 
    return (
          <div className='  flex flex-col items-center w-full transition-all duration-300 border-b border-b-gray-300 dark:border-b-gray-700 ' >         
-            <div ref = {elementToObserveRef} className="border w-full ">
+            <div ref = {elementToObserveRef} className="main_menu w-full ">
                <Name pageName={pageName}/>
             </div>
-            <div className={!observer?.isInView ? "fixed  w-full border-b bg-white border-b-gray-300 dark:border-b-gray-500  dark:bg-[#2a2a2a]" : "" }>
+            <div className={!observer?.isInView ? "fixed  w-full border-b bg-white border-b-gray-300 dark:border-b-gray-500  dark:bg-[#2a2a2a] main_menu" : "" }>
                <Menu setPageName={setPageName}/>
             </div>
-            <div className="  w-full ">
+            <div className="fixed menu_two w-full border-b bg-white border-b-gray-300 dark:border-b-gray-500  dark:bg-[#2a2a2a]">
                <Menu_Two />
             </div>
             

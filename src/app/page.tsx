@@ -3,13 +3,13 @@ import Footer from "@/components/Footer"
 export default function Home() {
    return (
       <div className="flex flex-col items-center min-h-screen  ">
-         <header className= ' w-full flex justify-center  '>
+         <header className= ' w-full flex justify-center '>
             <Header />
          </header>
          {/* <div className= "w-10 border h-10 dark:bg-amber-400">
             
          </div> */}
-         <main className=' max-w-[60em] mt-20 mb-6 border border-dashed px-4'>
+         <main className=' main_content max-w-[60em] mb-6 px-4'>
             <h1 className='font-black text-4xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>
