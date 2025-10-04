@@ -2,7 +2,7 @@ import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
 export default function Home() {
    return (
-      <div className="flex flex-col items-center min-h-screen ">
+      <div className="flex flex-col items-center min-h-screen  ">
          <header className= ' w-full flex justify-center  '>
             <Header />
          </header>
