@@ -5,6 +5,7 @@ import "./globals.css";
 
 import ObserverProvider from "./context/ObserverProvider";
 import ThemeProvider from "./context/ThemeProvider";
+import SidebarProvider from "./context/SidebarProvider";
 // import ObserverProvider from "./providers/observer/ObserverProvider";
 
 const geistSans = Geist({
@@ -46,10 +47,11 @@ export default function RootLayout({
             disableTransitionOnChange
          >
             <ObserverProvider>
-               {children}
+               <SidebarProvider>
+                  {children}
+               </SidebarProvider>
             </ObserverProvider>
          </ThemeProvider>
-         
       </body>
     </html>
   );
