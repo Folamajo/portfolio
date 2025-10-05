@@ -1,6 +1,8 @@
-import React, { ReactNode, useContext, useState } from 'react'
-import { createContext } from "react";
+"use client"
 
+import React, { ReactNode, useContext, useEffect, useState } from 'react'
+import { createContext } from "react";
+import { usePathname } from 'next/navigation';
 
 type SidebarConfig = {
    isSidebarOpen: boolean;
@@ -22,6 +24,14 @@ const SidebarProvider = ({children} : {children: ReactNode})  => {
       setIsSidebarOpen(false)
    }
 
+   const pathname = usePathname()
+   useEffect(()=>{
+      if( isSidebarOpen === true){
+         close()
+      }
+   }, [pathname])
+
+
 
    return (
       <SidebarContext.Provider value = {{isSidebarOpen, toggle, close}}>
@@ -34,7 +44,7 @@ const SidebarProvider = ({children} : {children: ReactNode})  => {
 
 export const useSidebar = () => {
    const sideBar = useContext(SidebarContext)
-   return sideBar
+   return sideBar;
 }
 export default SidebarProvider
 

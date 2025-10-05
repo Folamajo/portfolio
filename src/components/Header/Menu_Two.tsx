@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { RxHamburgerMenu } from "react-icons/rx";
-
+import { useSidebar } from '@/app/context/SidebarProvider';
 
 const Menu_Two = () => {
-   const [openSideBar, setOpenSideBar] = useState<boolean>(false)
+
+   const {isSidebarOpen, toggle } = useSidebar()
+   // const [openSideBar, setOpenSideBar] = useState<boolean>(false)
    useEffect(()=>{
 
-      console.log(openSideBar)
-   }, [openSideBar])
+      console.log(isSidebarOpen)
+   }, [isSidebarOpen])
 
    
   return (
@@ -26,7 +28,7 @@ const Menu_Two = () => {
                
 
                <div className=' ml-auto ' >
-                  <RxHamburgerMenu className="text-2xl cursor-pointer hover:opacity-80 " onClick={()=>setOpenSideBar(prev => !prev)}/>
+                  <RxHamburgerMenu className="text-2xl cursor-pointer hover:opacity-80 " onClick={toggle}/>
                </div>
             </div>
 
