@@ -13,6 +13,7 @@ type MenuProps ={
 
 const Menu = ({ setPageName } : MenuProps) => {
    const observer = useContext(ObserverContext)
+   
    return (
       <div className= ' flex justify-center items-center relative'>
          <div className="w-[60em] relative flex justify-center items-center py-6 ">
