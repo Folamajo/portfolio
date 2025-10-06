@@ -1,8 +1,11 @@
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
+import Sidebar from "@/components/Sidebar"
 export default function Home() {
    return (
       <div className="flex flex-col items-center min-h-screen  ">
+         <Sidebar />
+
          <header className= ' w-full flex justify-center '>
             <Header />
          </header>
@@ -136,6 +139,8 @@ export default function Home() {
     
    )
 }
+
+
 
 
 
