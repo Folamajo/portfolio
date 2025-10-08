@@ -4,7 +4,10 @@ import Sidebar from "@/components/Sidebar"
 export default function Home() {
    return (
       <div className="flex flex-col items-center min-h-screen  ">
-         <Sidebar />
+         
+            <Sidebar />
+        
+         
 
          <header className= ' w-full flex justify-center '>
             <Header />
