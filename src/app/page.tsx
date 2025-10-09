@@ -1,10 +1,16 @@
+"use client"
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
 import Sidebar from "@/components/Sidebar"
+import { useSidebar } from "./context/SidebarProvider"
+
 export default function Home() {
+
+   const { isSidebarOpen, close} = useSidebar()
+
    return (
       <div className="flex flex-col items-center min-h-screen  ">
-         
+            
             <Sidebar />
         
          
