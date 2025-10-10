@@ -21,8 +21,10 @@ const Sidebar = () => {
     {/*${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} */}
       {/* transition-transform duration-300 ease-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} */}
          
-      <div className = "overlay fixed   w-full h-screen bg-black/40 top-0 z-80" onClick={closeSidebar}>
-         <div className={`w-[22em]  bg-white h-full z-99 opacity-100 dark:bg-[#2a2a2a]  `}>
+      <div className = {`overlay fixed   w-full h-screen bg-black/50 top-0 z-80 transition-opacity duration-300 ease-in ${isSidebarOpen ?  "opacity-100 pointer-events-auto": "opacity-0 pointer-events-none"}`} onClick={closeSidebar}>
+        
+      </div>
+       <div className={`w-[22em] fixed left-0 bg-white h-full z-99 opacity-100 dark:bg-[#2a2a2a] transition-transform duration-900 ease-in-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}`}>
                <div className=' pl-4 pr-6 py-3 flex border-b border-b-gray-300 dark:border-b-gray-500'>
 
                   <div className="  mr-auto">
@@ -71,7 +73,6 @@ const Sidebar = () => {
             </div>
 
          </div>
-      </div>
    </>
   )
 }
