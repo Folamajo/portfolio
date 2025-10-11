@@ -15,8 +15,8 @@ const page = () => {
 
          
   
-      <main className='w-[60em] mt-20'>
-         <h1 className='font-black text-4xl mr-auto'>About me</h1>
+      <main className=' main_content max-w-[60em] mb-6 px-4'>
+         <h1 className='font-black text-4xl'>About me</h1>
          
          <div>//IMAGE</div>
 
@@ -50,10 +50,10 @@ const page = () => {
          
          
       </main>
-      <footer className="border border-dashed w-full flex justify-center mt-auto py-6">
+      <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
          <div className="w-[60em] ">
-               <Footer />
-            </div>
+            <Footer />
+         </div>
       </footer>
    </div>
       

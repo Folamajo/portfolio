@@ -13,15 +13,18 @@ const page = () => {
             <Header />
          </header>
 
-         <main className='w-[60em] mt-20'>
-            <h1 className='font-black text-4xl mr-auto'>Projects</h1>
+         <main className=' main_content max-w-[60em] mb-6 px-4 w-full'>
+            <h1 className='font-black text-4xl '>Projects</h1>
+            <div>
+
+            </div>
          </main>
 
-         <div className="px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
+         <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
             <div className="w-[60em] ">
                <Footer />
-            </div> 
-         </div>
+            </div>
+         </footer>
       </div>
    )
 }
