@@ -6,15 +6,10 @@ import { useSidebar } from "./context/SidebarProvider"
 
 export default function Home() {
 
-   const { isSidebarOpen, close} = useSidebar()
 
    return (
       <div className="flex flex-col items-center min-h-screen  ">
-            
-            <Sidebar />
-        
-         
-
+         <Sidebar />
          <header className= ' w-full flex justify-center '>
             <Header />
          </header>
@@ -36,107 +31,106 @@ export default function Home() {
                </p>
             </div>
 
-            <div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div><div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div><div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div><div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div><div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div><div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div><div className= "mt-6">
-               <p>
-                  I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
-               </p>
-               <p className="mt-4">
-                  This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
-               </p>
-               <p className="mt-4">
-                  At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
-               </p>
-               <p className="mt-4">
-                  You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
-               </p>
-            </div>
-            
-
-            <div className= "mt-6">
+               <div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div><div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div><div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div><div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div><div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div><div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div><div className= "mt-6">
+                  <p>
+                     I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
+                  </p>
+                  <p className="mt-4">
+                     This site is where I share the different things I’m building and learning, from the books I’m reading to the technical projects I’m experimenting with.
+                  </p>
+                  <p className="mt-4">
+                     At the heart of it all, I'm focused on growth, discipline and building things that last, whether it's a clean scalable project, a piece of writing or a cultural insight.
+                  </p>
+                  <p className="mt-4">
+                     You can subscribe to to receive my weekly blog posts that talk about the things I am learning on my tech journey.
+                  </p>
+               </div>
+               
+               <div className= "mt-6">
                <h2 className="text-2xl font-black">Latest posts</h2>
             </div>
          </main>
 
 
-         <div className="  w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
+         <div className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
             <div className="w-[60em] ">
                <Footer />
             </div>

@@ -1,18 +1,22 @@
 import React from 'react'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer'
+import Sidebar from "@/components/Sidebar"
+
+
 const page = () => {
   return (
-   <div className="flex flex-col items-center border border-dashed h-screen">
+      <div className="flex flex-col items-center min-h-screen">
+         <Sidebar />
      
-         <header className= 'border border-dashed w-full flex justify-center '>
+         <header className= ' w-full flex justify-center'>
             <Header />
          </header>
 
          
   
       <main className='w-[60em] mt-20'>
-         <h1 className='font-black text-4xl'>About me</h1>
+         <h1 className='font-black text-4xl mr-auto'>About me</h1>
          
          <div>//IMAGE</div>
 

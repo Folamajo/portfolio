@@ -14,7 +14,24 @@ export const SidebarContext = createContext<SidebarConfig>({isSidebarOpen: false
 
 
 const SidebarProvider = ({children} : {children: ReactNode})  => {
-   const[isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false)
+   const[isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
+   const [windowWidth, setWindowWidth] = useState<number>(0)
+
+   useEffect(()=> {
+      const handleResize = () => setWindowWidth(window.innerWidth)
+      window.addEventListener("resize", handleResize)
+      return ()=> window.removeEventListener("resize", handleResize)
+   }, [])
+   console.log(windowWidth)
+
+   useEffect(()=> {
+      if(windowWidth > 991){
+         setIsSidebarOpen(false)
+      }
+   }, [windowWidth])
+
+
+
 
    const toggle = () => {
       setIsSidebarOpen(prev => !prev)
