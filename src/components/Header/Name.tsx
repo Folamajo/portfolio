@@ -1,7 +1,6 @@
 "use client"
 import { usePathname } from 'next/navigation'
-import React, { SetStateAction, useState } from 'react'
-import { BiMoon } from "react-icons/bi";
+import React from 'react'
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Toggle from './Toggle';
@@ -15,7 +14,7 @@ type NameProps = {
 const Name = ({ pageName } : NameProps) => {
    const pathName= usePathname()
    const cleanedPathName = pathName.replace("/", "" )
-   const {theme, setTheme} = useTheme()
+   // const {theme, setTheme} = useTheme()
 
    
 
