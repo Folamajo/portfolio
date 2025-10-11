@@ -8,14 +8,14 @@ export default function Home() {
 
 
    return (
-      <div className="flex flex-col items-center min-h-screen ">
+      <div className="flex flex-col items-center min-h-screen tracking-tight">
          <Sidebar />
          <header className= ' w-full flex justify-center '>
             <Header />
          </header>
         
          <main className=' main_content max-w-[60em] mb-6 px-4 w-full'>
-            <h1 className='font-black text-4xl '>👋🏾 Hello, I'm Fola</h1>
+            <h1 className='font-black text-3xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>
                   I’m a software engineer, builder, and creative thinker working at the crossroads of technology and culture. Code is my main medium, but I’m equally drawn to design, philosophy, and the ways creativity shapes our world.
