@@ -15,15 +15,13 @@ const Menu = ({ setPageName } : MenuProps) => {
    const observer = useContext(ObserverContext)
    
    return (
-      <div className= ' flex justify-center items-center relative'>
-         <div className="w-[60em] relative flex justify-center items-center py-6 ">
+      <div className= ' flex justify-center items-center relative '>
+         <div className="w-[60em] relative flex justify-center items-center py-6  ">
             {
-               !observer?.isInView ? <div className="absolute left-2 font-bold text-lg ">Fola Majoyegbe</div> : ""
+               !observer?.isInView ? <div className="absolute left-2 font-bold text-lg px-2">Fola Majoyegbe</div> : ""
             }
             
-             {/* <div className = "border border-dashed mr-auto">
-               Fola Majoyegbe
-             </div> */}
+
 
 
             <div className="  mx-auto absolute left-1/2 transform -translate-x-1/2 text-[0.8em]">
@@ -62,7 +60,7 @@ const Menu = ({ setPageName } : MenuProps) => {
 
             </div>
             {
-               !observer?.isInView ? <div className="absolute right-2 font-bold text-lg"><Toggle /></div> : ""
+               !observer?.isInView ? <div className="absolute right-2 font-bold text-lg  pr-2"><Toggle /></div> : ""
             }
             
          </div>
