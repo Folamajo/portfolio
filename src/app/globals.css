@@ -45,9 +45,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin:0;
   padding:0;
-
-  
-  
 }
 
 
@@ -60,7 +57,7 @@ body {
 
 
 
-@media (max-width: 991px){
+@media (max-width: 881px){
    .main_menu{
       display: none;
    }
@@ -70,13 +67,14 @@ body {
    }
 }
 
-@media (min-width: 991px){
+@media (min-width: 881px){
    .menu_two{
       display:none;
    }
    .main_content{
       padding-top: 2em;
-   }   .overlay{
+   }
+   .overlay{
       display: none;
    }
 }

@@ -47,8 +47,8 @@ const Sidebar = () => {
 
                <div className="mt-10 px-4">
 
-                     <h1 className="text-xl font-bold tracking-tight">SECTIONS</h1>
-                     <ul className='flex gap-4  flex-col mt-4 text-xl tracking-tight'>
+                     <h1 className="text-lg font-bold tracking-tight">SECTIONS</h1>
+                     <ul className='flex gap-2  flex-col mt-4 text-md tracking-tight'>
                   <li className= "hover:opacity-70">
                      <Link href='/about' 
                      >About</Link>
