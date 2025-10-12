@@ -5,6 +5,7 @@ import { PiMoonLight, PiSunLight } from 'react-icons/pi';
 
 const Toggle = () => {
    const {theme, setTheme} = useTheme()
+
    return (
       <div>
          <button onClick = {()=> setTheme(prev => prev === "light" ? "dark": "light")} className = " ml-auto hover:cursor-pointer">

@@ -8,13 +8,14 @@ export default function Home() {
 
 
    return (
-      <div className="flex flex-col items-center min-h-screen tracking-tight">
+      <div className="flex flex-col items-center min-h-screen tracking-tight ">
          <Sidebar />
          <header className= ' w-full flex justify-center '>
             <Header />
          </header>
         
-         <main className=' main_content max-w-[60em] mb-6 px-4 w-full'>
+
+         <main className=' main_content max-w-[60em] mb-6 px-4 w-full '>
             <h1 className='font-black text-3xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>
@@ -130,7 +131,7 @@ export default function Home() {
          </main>
 
 
-         <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
+         <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black transition-colors duration-2000">
             <div className="w-[60em] ">
                <Footer />
             </div>

@@ -38,13 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased`}
+        className={`${inter.className} antialiased transition-colors duration-1500 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100`}
       >
          <ThemeProvider 
             attribute='class' 
             enableSystem 
             defaultTheme="system"
             disableTransitionOnChange
+            enableColorScheme = {false}
          >
             <ObserverProvider>
                <SidebarProvider>
