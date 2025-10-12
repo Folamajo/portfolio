@@ -4,9 +4,7 @@ import React from 'react'
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import Toggle from './Toggle';
-// type NameProps ={
-//    setPageName: React.Dispatch<React.SetStateAction<string>>
-// }
+
 type NameProps = {
    pageName: string
 }

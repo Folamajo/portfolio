@@ -2,6 +2,9 @@
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
 import Sidebar from "@/components/Sidebar"
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 
 
 export default function Home() {
@@ -28,7 +31,18 @@ export default function Home() {
                   Here, You'll find my projects, writings and the occasionsal reflection on building, discipline and growth — both technical and personal.
                </p>
                <p className="mt-4">
-                  If that sounds like your vibe, feel free to <span className="font-bold hover:opacity-80 cursor-pointer">subscribe</span> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
+                  If that sounds like your vibe, feel free to <Popover> 
+                     <PopoverTrigger> <span className="font-bold hover:opacity-80 cursor-pointer">subscribe</span></PopoverTrigger>
+                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#2a2a2a] dark:border-gray-500 text-md ">
+                           <p className="mb-2 font-bold">Subscribe to follow my journey and get posts about what I'm building, learning, and thinking about.</p>
+                        <Input  type = "email" placeholder="Email" className="mb-2"/>
+                        <Button size="sm" variant="outline" className="bg-black text-white font-bold hover:opacity-80 cursor-pointer w-18 mx-auto">Submit</Button>
+                        </PopoverContent>
+                     </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
+                        
+                     
+                     
+                  
                </p>
 
                <p className="mt-4">Thanks for stopping by.</p>
