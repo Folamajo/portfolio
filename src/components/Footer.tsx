@@ -1,5 +1,4 @@
 import React from 'react'
-import siteConfig from '@/siteConfig.json'
 import Link from 'next/link'
 
 const Footer = () => {
