@@ -62,8 +62,8 @@ const Sidebar = () => {
                      >Blog</Link>
                   </li>
                   <li className= "hover:opacity-70">
-                     <Link href='/contact'
-                     >Contact</Link>
+                     <Link href='/connect'
+                     >Connect</Link>
                   </li>
                   <li className= "hover:opacity-70">
                      <Link href='/now'

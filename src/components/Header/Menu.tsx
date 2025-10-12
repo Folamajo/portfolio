@@ -16,7 +16,7 @@ const Menu = ({ setPageName } : MenuProps) => {
    
    return (
       <div className= ' flex justify-center items-center relative '>
-         <div className="w-[57em] relative flex justify-center items-center py-6  ">
+         <div className="w-[58em] relative flex justify-center items-center py-6  ">
             {
                !observer?.isInView ? <div className="absolute left-2 font-bold text-lg px-2">Fola Majoyegbe</div> : ""
             }
@@ -45,10 +45,10 @@ const Menu = ({ setPageName } : MenuProps) => {
                   >BLOG</Link>
                </li>
                <li className= "hover:opacity-70">
-                  <Link href='/contact'
-                        onMouseEnter={()=>setPageName('cd contact')}
+                  <Link href='/connect'
+                        onMouseEnter={()=>setPageName('cd connect')}
                         onMouseLeave={()=>setPageName("")}
-                  >CONTACT</Link>
+                  >CONNECT</Link>
                </li>
                <li className= "hover:opacity-70">
                   <Link href='/now'

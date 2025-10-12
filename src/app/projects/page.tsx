@@ -13,8 +13,8 @@ const page = () => {
             <Header />
          </header>
 
-         <main className=' main_content max-w-[60em] mb-6 px-4 w-full'>
-            <h1 className='font-black text-4xl '>Projects</h1>
+         <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
+            <h1 className='font-bold text-3xl '>Projects</h1>
             <div>
 
             </div>

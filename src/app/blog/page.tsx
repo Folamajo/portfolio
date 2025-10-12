@@ -14,8 +14,8 @@ const page = () => {
          </header>
 
 
-         <main className=' main_content max-w-[60em] mb-6 px-4 w-full'>
-            <h1 className='font-black text-4xl'>Blog</h1>
+         <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
+            <h1 className='font-bold text-3xl '>Blog</h1>
          </main>
          
          <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">

@@ -11,8 +11,8 @@ const page = () => {
          <header className= 'w-full flex justify-center '>
             <Header />
          </header>
-         <main className=' main_content max-w-[60em] mb-6 px-4 w-full'>
-            <h1 className='font-black text-4xl '>Get in touch</h1>
+         <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
+            <h1 className='font-bold text-3xl '>Connect</h1>
             <div className= "mt-6">
                   
                <p>Whether it's about software, ideas, or culture, I am always open to connection.</p>

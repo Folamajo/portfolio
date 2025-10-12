@@ -15,7 +15,7 @@ export default function Home() {
          </header>
         
 
-         <main className=' main_content max-w-[57em] mb-6 px-4 w-full '>
+         <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
             <h1 className='font-bold text-3xl '>👋🏾 Hello, I'm Fola</h1>
             <div className= "mt-6">
                <p>

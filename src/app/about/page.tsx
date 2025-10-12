@@ -15,38 +15,36 @@ const page = () => {
 
          
   
-      <main className=' main_content max-w-[60em] mb-6 px-4'>
-         <h1 className='font-black text-4xl'>About me</h1>
+      <main className=' main_content max-w-[57em] mb-6 px-4'>
+         <h1 className='font-bold text-3xl '>About </h1>
          
          <div>//IMAGE</div>
 
 
          <div className= "mt-6">
-            <h1 className="text-2xl font-black">Who is Fola Majoyegbe?</h1>
+            <h1 className="text-xl font-bold">Who is Fola?</h1>
             <p className="mt-4">
-               I was born in Nigeria and grew up in Ireland, two places that shaped both my toughness and my imagination. My degree was in biopharmaceuticals, but football was always my first love. I played semi-pro for a while before realizing my path would take me beyond the pitch.
+               I was born in Nigeria and grew up in Ireland, two places that taught me how to adapt fast and stay curious. My degree was in biopharmaceuticals, but at the time, I wasn’t sure what I really wanted to do.
             </p>
             <p className="mt-4">
-               I’ve lived a lot of lives in a short time: a few months in New York, nearly a year in the Netherlands, and two unforgettable years in Vietnam. Living and working in different places around the world has helped me build resilience, adaptability, and a global perspective that now shapes how I work with teams and approach problem-solving.
+               Over the years, I've lived in a few different corners of the world. A few months in New York, nearly a year in the Netherlands, and two unforgettable years in Vietnam. Living and working across cultures taught me resilience, adaptability, and perspective, all of which now shape how I build, think, and collaborate.
             </p>
             <p className="mt-4">
-               Eventually, I came back, sat down, and taught myself how to code. That decision changed everything. Today, I’m a software engineer by trade — building tools, solving problems, and chasing mastery in tech.
+               After years of exploring, I came back home and decided to learn how to code. I started with a bootcamp and kept teaching myself from there. That decision changed everything. Today, I’m a software engineer by trade — building tools, solving problems, and chasing mastery in tech.
             </p>
 
          </div>
          <div className="mt-6">
-            <h1 className="text-2xl font-black">Hobbies?</h1>
-            <p className="mt-4">When I'm not at my desk. I like to move. I train calisthenics, and have been recently been pushing myself through Muay Thai. Football is still a big part of my life too, whether I'm playing recreationally or supporting Arsenal(with all the highs and heartbreaks that come with it). 
+            <h1 className="text-xl font-bold">Hobbies & Interests?</h1>
+            <p className="mt-4">When I'm not coding. I like to move, football has always been a constant in my life, I've played since I was a kid and I still play regularly today. And yes, I support Arsenal, with all the highs and heartbreaks that come with it. I also train calisthenics and kickboxing a few times a week. 
 
             </p>
             <p className="mt-4">
-               Outside of fitness and sport, I also enjoy reading and my current obsession is philosophy and Nietzsche. I am fascinated by how ideas shape culture, creativity, and problem solving. That curiosity feeds directly into engineering and my side project Papo Arts Club – a cultural intelligence platform inspired by African visual arts. It’s where I research, curate, and tell stories about art, design, and fashion from across the continent, blending culture with analysis and technology.
+              Outside of movement and sport, I take time to read. Lately, philosophy and Nietzsche have been at the center of that. I’m fascinated by how ideas shape creativity, systems, and problem-solving. That same curiosity also fuels my love for art and design, and how both connect with technology and culture.
             </p>
 
          </div>
-         <div>
-            
-         </div>
+         
          
          
       </main>

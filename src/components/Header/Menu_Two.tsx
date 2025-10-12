@@ -15,7 +15,7 @@ const Menu_Two = () => {
    
   return (
       <div>
-         <div className=' px-4 py-3 flex max-w-[55em] mx-auto'>
+         <div className=' px-4 py-3 flex max-w-[58em] mx-auto'>
 
 
                <div className="  mr-auto">
