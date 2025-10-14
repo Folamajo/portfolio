@@ -32,17 +32,14 @@ export default function Home() {
                </p>
                <p className="mt-4">
                   If that sounds like your vibe, feel free to <Popover> 
-                     <PopoverTrigger> <span className=" hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span></PopoverTrigger>
-                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#2a2a2a] dark:border-gray-500 text-md ">
+                     <PopoverTrigger> <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span></PopoverTrigger>
+                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">
                            <p className="mb-2 font-bold">Subscribe to follow my journey and get posts about what I'm building, learning, and thinking about.</p>
                         <Input  type = "email" placeholder="Email" className="mb-2"/>
                         <Button  variant="outline" className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18 mx-auto border-0">Submit</Button>
                         </PopoverContent>
                      </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
-                        
-                     
-                     
-                  
+
                </p>
 
                <p className="mt-4">Thanks for stopping by.</p>
@@ -51,7 +48,6 @@ export default function Home() {
             
                
                <div className= "mt-6">
-               {/* <h2 className="text-2xl font-black">Latest posts</h2> */}
             </div>
          </main>
 

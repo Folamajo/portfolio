@@ -28,7 +28,7 @@
 }
 
 html.dark{
-   --background: #2a2a2a;
+   --background: #222;
    --foreground: #ededed;
    color-scheme: dark;
 }
