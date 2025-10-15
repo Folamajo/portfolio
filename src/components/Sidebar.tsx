@@ -18,8 +18,7 @@ const Sidebar = () => {
   return (
    <>
    
-    {/*${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} */}
-      {/* transition-transform duration-300 ease-out ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} */}
+
          
       <div className = {`overlay fixed   w-full h-screen bg-black/50 top-0 z-[80] transition-opacity duration-1500 ease-in-out ${isSidebarOpen ?  "opacity-100 pointer-events-auto": "opacity-0 pointer-events-none"}`} onClick={closeSidebar}>
         
