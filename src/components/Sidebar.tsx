@@ -8,7 +8,7 @@ import { TfiClose } from "react-icons/tfi";
 const Sidebar = () => {
 
    const { isSidebarOpen, close} = useSidebar()
-   console.log(isSidebarOpen)
+   // console.log(isSidebarOpen)
    const closeSidebar = (event: React.MouseEvent<HTMLDivElement>)=> {
       if (event.target !== event.currentTarget){
          return;
