@@ -11,11 +11,6 @@ export const POST = async(request: Request)=> {
    // Returns value to the user
    // Resoponse returns an object and accepts two parameters a body which is usually a message we want to send to backend  and options
 
-
-   
-
-
-
    //Guard against missing config 
    if (!mailerLiteKey || !mailerLiteGroupId){
       return new Response(
@@ -34,20 +29,42 @@ export const POST = async(request: Request)=> {
 
 
 
-   if (body.email && validateEmail(body.email)){
 
+
+   if (body.email && validateEmail(body.email)){
 
       const subscriptionPayload = {
          email : body.email,
          groupId : mailerLiteGroupId
       }
 
-      
+      async function subscribe(){
+         const url = "https://connect.mailerlite.com/api/subscribers"
+         try {
+            const response = await fetch(url, {
+               method : "POST",
+               headers : {
+                  "Content-Type" : "application/json",
+               },
+               body : JSON.stringify(subscriptionPayload)
+            })
+
+            if (!response.ok){
+               throw new Error(`Request failed with status ${response.status}`)
+            }
+            const result = await response.json()
+            console.log(result)
+         } catch(error){
+            console.log(error)
+         }
+      }
+
       return new Response(
          JSON.stringify({message : "Email added", body}), 
          { status: 201 }
       )
    }
+
    else {
       return new Response(JSON.stringify({message: "Error: No email "}), {
          status: 400
