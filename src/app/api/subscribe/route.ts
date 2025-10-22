@@ -1,6 +1,6 @@
 export const runtime = "nodejs";
 
-const mailerLiteKey = process.env.MAILERLITE_API_KEY
+const mailerLiteApiKey = process.env.MAILERLITE_API_KEY
 const mailerLiteGroupId = process.env.MAILERLITE_GROUP_ID
 const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
@@ -12,7 +12,7 @@ export const POST = async(request: Request)=> {
    // Resoponse returns an object and accepts two parameters a body which is usually a message we want to send to backend  and options
 
    //Guard against missing config 
-   if (!mailerLiteKey || !mailerLiteGroupId){
+   if (!mailerLiteApiKey || !mailerLiteGroupId){
       return new Response(
          JSON.stringify({message: "Server misconfiguration: missing env vars"}),
          {status: 500}
@@ -35,7 +35,7 @@ export const POST = async(request: Request)=> {
 
       const subscriptionPayload = {
          email : body.email,
-         groupId : mailerLiteGroupId
+         groups : [mailerLiteGroupId]
       }
 
       async function subscribe(){
@@ -45,6 +45,8 @@ export const POST = async(request: Request)=> {
                method : "POST",
                headers : {
                   "Content-Type" : "application/json",
+                  "Accept" : "application/json",
+                  "Authorization" : `Bearer ${mailerLiteApiKey}`
                },
                body : JSON.stringify(subscriptionPayload)
             })
@@ -52,18 +54,29 @@ export const POST = async(request: Request)=> {
             if (!response.ok){
                throw new Error(`Request failed with status ${response.status}`)
             }
+
+
             const result = await response.json()
-            console.log(result)
+
+
+
+            if(result)
+
+            // console.log(result)
          } catch(error){
             console.log(error)
          }
       }
+
+      subscribe()
 
       return new Response(
          JSON.stringify({message : "Email added", body}), 
          { status: 201 }
       )
    }
+
+
 
    else {
       return new Response(JSON.stringify({message: "Error: No email "}), {
