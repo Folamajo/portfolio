@@ -3,6 +3,7 @@ export const runtime = "nodejs";
 const mailerLiteApiKey = process.env.MAILERLITE_API_KEY
 const mailerLiteGroupId = process.env.MAILERLITE_GROUP_ID
 const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
+const subscribeStatus = process.env.MAILERLITE_SUBSCRIBE_STATUS
 
 
 
@@ -28,7 +29,7 @@ export const POST = async(request: Request)=> {
    };
 
 
-   async function subscribe(payload: {email: string, groups: string[]}){
+   async function subscribe(payload: {email: string, groups: string[], status: "pending"|"active"}){
       const url = "https://connect.mailerlite.com/api/subscribers"
          
       try {
@@ -82,7 +83,8 @@ export const POST = async(request: Request)=> {
       const normalisedEmail = body.email.trim().toLowerCase()
       const subscriptionPayload = {
          email : normalisedEmail,
-         groups : [mailerLiteGroupId]
+         groups : [mailerLiteGroupId],
+         status : subscribeStatus
       }
 
 
