@@ -42,9 +42,9 @@ export const POST = async(request: Request)=> {
             body : JSON.stringify(payload)
          })
 
-         if (!response.ok){
-            return {ok : false, code: 500, message: "Request failed!" } 
-         }
+         // if (!response.ok){
+         //    return {ok : false, code: 500, message: "Request failed!" } 
+         // }
 
 
          // const result = await response.json()
@@ -57,18 +57,22 @@ export const POST = async(request: Request)=> {
          }
 
          if( response.status === 400){
-            return {ok : false, code : 400,  message : "Invalid email"}
+            return {ok : false, code : 400,  message : "Unexpected request error"}
          }
-         else {
-            return {ok : true, code : 502, message: "Upstream subscription error "}
+         if(response.status >= 500 && response.status <= 599) {
+            return {ok : false, code : response.status, message: "MailerLite server error "}
          }
-            
+         else{
+            return {ok: false, code : response.status, message: "Upstream error" }
+         }
+     
+
 
 
 
          // console.log(result)
       } catch(error){
-         return {ok: false, code: 502, message : "502 response"}
+         return {ok: false, code: 502, message : "MailerLite unreachable"}
       }
    }
 
@@ -85,20 +89,15 @@ export const POST = async(request: Request)=> {
       const result = await subscribe(subscriptionPayload)
 
       // return new Response(result?.message)
-      return new Response(
-         JSON.stringify(result), subscriptionPayload.email
-        
+      return new Response( 
+         JSON.stringify({ok: result?.ok, message : result?.message, email : subscriptionPayload.email}), 
+         {
+            status : result?.code,
+            headers : { "Content-Type": "application/json"}            
+         }
       )
-   }
-
-
-
-
-
-
-
-   else {
-      return new Response(JSON.stringify({message: "Error: No email "}), {
+   } else {
+      return new Response(JSON.stringify({ok: false, code: 400, message: "Invalid email", email : body.email}), {
          status: 400
       })
    }
