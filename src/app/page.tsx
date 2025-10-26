@@ -5,10 +5,28 @@ import Sidebar from "@/components/Sidebar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 
 export default function Home() {
+   const [email, setEmail] = useState<string>("");
+   const [loading, setLoading] = useState<boolean>(false);
+   const [message, setMessage] = useState<string>("")
 
+   const handleSubscribe= async ()=>{
+      setLoading(true)
+      const response = await fetch("/api/subscribe", {
+         method: "POST",
+         headers : { "Content-Type" : "application/json" },
+         body: JSON.stringify({email : email})
+
+      })
+
+      const result = await response.json();
+      setMessage(result.message)
+      setLoading(false)
+      console.log(result)
+   }
 
    return (
       <div className="flex flex-col items-center min-h-screen tracking-tight ">
@@ -33,10 +51,16 @@ export default function Home() {
                <p className="mt-4">
                   If that sounds like your vibe, feel free to <Popover> 
                      <PopoverTrigger> <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span></PopoverTrigger>
-                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">
-                           <p className="mb-2 font-bold">Subscribe to follow my journey and get posts about what I'm building, learning, and thinking about.</p>
-                        <Input  type = "email" placeholder="Email" className="mb-2"/>
-                        <Button  variant="outline" className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18 mx-auto border-0">Submit</Button>
+                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">{
+                              message ? <p>{message}</p> :  <p className="mb-2 font-bold">Subscribe to follow my journey and get posts about what I'm building, learning, and thinking about.</p>
+                           }
+                          
+                        <Input   type = "email" placeholder="Email" className="mb-2" 
+                                 onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
+                        <Button  type ="submit" variant="outline" 
+                                 className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18 mx-auto border-0" 
+                                 onClick={handleSubscribe} disabled={ loading ? true : false}>Submit
+                        </Button>
                         </PopoverContent>
                      </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
 

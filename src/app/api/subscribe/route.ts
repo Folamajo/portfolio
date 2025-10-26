@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 const mailerLiteApiKey = process.env.MAILERLITE_API_KEY
 const mailerLiteGroupId = process.env.MAILERLITE_GROUP_ID
-const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
+// const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
 
 
 type subscribeStatusType = "pending" | "active"
@@ -17,6 +17,9 @@ process.env.MAILERLITE_SUBSCRIBE_STATUS === "pending" || process.env.MAILERLITE_
 
 
 export const POST = async(request: Request)=> {
+   if(request){
+      console.log("request recieved")
+   }
    // Post route accepts data and validates the email data 
    // Returns value to the user
    // Resoponse returns an object and accepts two parameters a body which is usually a message we want to send to backend  and options
