@@ -3,7 +3,16 @@ export const runtime = "nodejs";
 const mailerLiteApiKey = process.env.MAILERLITE_API_KEY
 const mailerLiteGroupId = process.env.MAILERLITE_GROUP_ID
 const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
-const subscribeStatus = process.env.MAILERLITE_SUBSCRIBE_STATUS
+
+
+type subscribeStatusType = "pending" | "active"
+let subscribeStatus : subscribeStatusType;
+
+
+process.env.MAILERLITE_SUBSCRIBE_STATUS === "pending" || process.env.MAILERLITE_SUBSCRIBE_STATUS === "active" ? subscribeStatus = process.env.MAILERLITE_SUBSCRIBE_STATUS : subscribeStatus = "pending"
+   
+
+
 
 
 
@@ -29,7 +38,10 @@ export const POST = async(request: Request)=> {
    };
 
 
-   async function subscribe(payload: {email: string, groups: string[], status: "pending"|"active"}){
+   async function subscribe(payload: {email: string, groups: string[], status: "pending" | "active"}){
+
+
+
       const url = "https://connect.mailerlite.com/api/subscribers"
          
       try {
@@ -68,10 +80,6 @@ export const POST = async(request: Request)=> {
          }
      
 
-
-
-
-         // console.log(result)
       } catch(error){
          return {ok: false, code: 502, message : "MailerLite unreachable"}
       }
