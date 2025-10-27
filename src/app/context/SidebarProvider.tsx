@@ -22,7 +22,7 @@ const SidebarProvider = ({children} : {children: ReactNode})  => {
       window.addEventListener("resize", handleResize)
       return ()=> window.removeEventListener("resize", handleResize)
    }, [])
-   console.log(windowWidth)
+   // console.log(windowWidth)
 
    useEffect(()=> {
       if(windowWidth > 991){

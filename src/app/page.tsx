@@ -23,8 +23,16 @@ export default function Home() {
       })
 
       const result = await response.json();
-      setMessage(result.message)
-      setLoading(false)
+      // setMessage(result.message)
+      // setLoading(false)
+      if (result.code === 200){
+         setMessage("You have already subscribed using this email! ")
+         setLoading(true)
+      }
+      if (result.code === 201){
+         setMessage("Thank you for subscribing, please check your inbox to confirm.")
+         setLoading(true)
+      }
       console.log(result)
    }
 
@@ -51,16 +59,24 @@ export default function Home() {
                <p className="mt-4">
                   If that sounds like your vibe, feel free to <Popover> 
                      <PopoverTrigger> <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span></PopoverTrigger>
-                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">{
-                              message ? <p>{message}</p> :  <p className="mb-2 font-bold">Subscribe to follow my journey and get posts about what I'm building, learning, and thinking about.</p>
+                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">
+                           {
+                              message 
+                              ?  <p>{message}</p> 
+                              :  <div className="mb-2">
+                                    <p className=" font-bold">Subscribe</p>
+                                    <p className="text-sm mt-2">Occassional updates only, no spam. Unsubscribe anytime.</p>
+                                 
+                                 </div>
                            }
                           
-                        <Input   type = "email" placeholder="Email" className="mb-2" 
-                                 onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
-                        <Button  type ="submit" variant="outline" 
-                                 className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18 mx-auto border-0" 
-                                 onClick={handleSubscribe} disabled={ loading ? true : false}>Submit
-                        </Button>
+                           <Input   type = "email" placeholder="Email" className="mb-2" 
+                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
+                           <Button  type ="submit" variant="outline" 
+                                    className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0" 
+                                    onClick={handleSubscribe} disabled={ loading ? true : false}>Submit
+                           </Button>
+                           <p className="text-xs mt-2">Your privacy matters. See my <span className="underline">privacy policy.</span></p>
                         </PopoverContent>
                      </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
 

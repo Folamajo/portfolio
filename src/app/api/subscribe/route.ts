@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 const mailerLiteApiKey = process.env.MAILERLITE_API_KEY
 const mailerLiteGroupId = process.env.MAILERLITE_GROUP_ID
-// const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
+const mailerLiteFormId  = process.env.MAILERLITE_FORM_ID
 
 
 type subscribeStatusType = "pending" | "active"
@@ -40,8 +40,8 @@ export const POST = async(request: Request)=> {
       return emailRegex.test(email)
    };
 
-
-   async function subscribe(payload: {email: string, groups: string[], status: "pending" | "active"}){
+// status: "unconfirmed" | "active"
+   async function subscribe(payload: {email: string, groups: string[], }){
 
 
 
@@ -57,10 +57,6 @@ export const POST = async(request: Request)=> {
             },
             body : JSON.stringify(payload)
          })
-
-         // if (!response.ok){
-         //    return {ok : false, code: 500, message: "Request failed!" } 
-         // }
 
 
          // const result = await response.json()
@@ -95,15 +91,16 @@ export const POST = async(request: Request)=> {
       const subscriptionPayload = {
          email : normalisedEmail,
          groups : [mailerLiteGroupId],
-         status : subscribeStatus
+         // status : subscribeStatus
       }
 
 
       const result = await subscribe(subscriptionPayload)
+      console.log(result)
 
       // return new Response(result?.message)
       return new Response( 
-         JSON.stringify({ok: result?.ok, message : result?.message, email : subscriptionPayload.email}), 
+         JSON.stringify({ok: result?.ok, code: result.code, message : result?.message, email : subscriptionPayload.email}), 
          {
             status : result?.code,
             headers : { "Content-Type": "application/json"}            
@@ -115,3 +112,11 @@ export const POST = async(request: Request)=> {
       })
    }
 }   
+
+
+
+
+
+
+
+// const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL
