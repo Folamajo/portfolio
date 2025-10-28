@@ -12,13 +12,44 @@ export default function Home() {
    const [email, setEmail] = useState<string>("");
    const [loading, setLoading] = useState<boolean>(false);
    const [message, setMessage] = useState<string>("")
+   const [errorMessage, setErrorMessage] = useState<string>("")
 
-   const handleSubscribe= async ()=>{
-      setLoading(true)
+   const handleSubscribe = async ()=>{
+      setErrorMessage("")
+      if(email === "" || !email){
+         setErrorMessage("Please enter your email.")
+         return;
+      }
+
+      // setLoading(true)
+
+      //Email validation
+      // get regex 
+      // create valudation 
+      // if it passes create a variable that stores the passed email if it doesnt. return an errorMessage
+
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      const validateEmail = (emailInput:string):boolean => {
+         return emailRegex.test(emailInput)
+      }
+
+      let normalisedEmail;
+      if (!validateEmail(email)){
+         setErrorMessage("Please enter a valid email.")
+         return
+      }
+      else {
+         normalisedEmail = email.trim().toLowerCase()
+      }
+
+
+
+
       const response = await fetch("/api/subscribe", {
          method: "POST",
          headers : { "Content-Type" : "application/json" },
-         body: JSON.stringify({email : email})
+         body: JSON.stringify({email : normalisedEmail})
 
       })
 
@@ -27,11 +58,11 @@ export default function Home() {
       // setLoading(false)
       if (result.code === 200){
          setMessage("You have already subscribed using this email! ")
-         setLoading(true)
+    
       }
       if (result.code === 201){
          setMessage("Thank you for subscribing, please check your inbox to confirm.")
-         setLoading(true)
+        
       }
       console.log(result)
    }
@@ -70,13 +101,17 @@ export default function Home() {
                                  </div>
                            }
                           
-                           <Input   type = "email" placeholder="Email" className="mb-2" 
+                           <Input   type = "email" placeholder="Email" className="" 
                                     onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
+                           {
+                              errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                           }
                            <Button  type ="submit" variant="outline" 
-                                    className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0" 
+                                    className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0 mt-2" 
                                     onClick={handleSubscribe} disabled={ loading ? true : false}>Submit
                            </Button>
-                           <p className="text-xs mt-2">Your privacy matters. See my <span className="underline">privacy policy.</span></p>
+                           
+                           <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
                         </PopoverContent>
                      </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
 
