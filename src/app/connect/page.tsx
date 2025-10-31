@@ -75,9 +75,9 @@ const page = () => {
                <h2 className="font-bold text-2xl mb-4">Let's connect</h2> 
                <p>Whether it's about software, ideas, or design, I am always open to connection.</p>
                <ul className="flex gap-10  justify-center mt-2">
-                  <TfiEmail className="text-5xl hover:opacity-80 cursor-pointer"/>
-                  <FaLinkedin className="text-5xl hover:opacity-80 cursor-pointer"/>
-                  <FaGithub className="text-5xl hover:opacity-80 cursor-pointer"/>
+                  <a href="mailto:fmajoyegbe@gmail.com"><TfiEmail className="text-5xl hover:opacity-80 cursor-pointer"/></a>
+                  <a href ="https://www.linkedin.com/in/fola-majoyegbe-85a19b98/" target="_blank" rel="no_opener noreferer"> <FaLinkedin className="text-5xl hover:opacity-80 cursor-pointer"/></a>
+                  <a href="https://github.com/Folamajo" target="_blank" rel="no_opener noreferer"><FaGithub className="text-5xl hover:opacity-80 cursor-pointer"/></a>
                </ul>
                <div className="border-b-1  mt-10 border-gray-300 dark:border-gray-500"></div>
 
@@ -88,7 +88,11 @@ const page = () => {
                         <h2 className="font-bold text-2xl mb-2">Stay in the loop</h2> 
                         <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
                         <Input type = "email" placeholder="Email" className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
-                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" onClick={handleSubscribe}>Submit</Button>
+                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" 
+                           onClick={handleSubscribe}>Submit</Button>
+                           {
+                              errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                           }
                         <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
                      </div>
                   )
@@ -101,6 +105,7 @@ const page = () => {
                         <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
                         <Input type = "email" placeholder={email} className="w-80 mr-2" />
                         <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" onClick={handleSubscribe} disabled={true}>Submit</Button>
+                        
                         <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
                      </div>
 
@@ -137,16 +142,14 @@ const page = () => {
                         <Input type = "email" placeholder={email} className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
                         <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" 
                         onClick={handleSubscribe}>Submit</Button>
+                        {
+                           errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                        }
                         <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
                      </div>
-                  
-                  
                   )
                }
-
             </div>
-         
-
          </main>
          <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
             <div className="w-[60em] ">
