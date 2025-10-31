@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer'
 import Sidebar from '@/components/Sidebar'
@@ -10,9 +10,60 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
 
-
 const page = () => {
-  return (
+
+   const [email, setEmail] = useState<string>("");
+   const [errorMessage, setErrorMessage] = useState<string>("")
+   
+   type Status = "idle" | "loading" | "success" | "already" | "error"
+   const [status, setStatus] = useState<Status>("idle")
+   
+   const handleSubscribe = async ()=>{
+         setErrorMessage("")
+         if(email === "" || !email){
+            setErrorMessage("Please enter your email.")
+            return;
+         }
+   
+         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   
+         const validateEmail = (emailInput:string):boolean => {
+            return emailRegex.test(emailInput)
+         }
+   
+         let normalisedEmail;
+         if (!validateEmail(email)){
+            setErrorMessage("Please enter a valid email.")
+            return
+         }
+         else {
+            normalisedEmail = email.trim().toLowerCase()
+         }
+   
+   
+   
+         const response = await fetch("/api/subscribe", {
+            method: "POST",
+            headers : { "Content-Type" : "application/json" },
+            body: JSON.stringify({email : normalisedEmail})
+   
+         })
+   
+         const result = await response.json();
+   
+         if (result.code === 200){
+            setStatus("already")
+         }
+         else if (result.code === 201){
+            setStatus("success")
+         }
+         else {
+            setStatus("error")
+            
+         }
+   
+   }
+   return (
       <div className="flex flex-col items-center min-h-screen">
          <Sidebar />
          <header className= 'w-full flex justify-center '>
@@ -30,14 +81,69 @@ const page = () => {
                </ul>
                <div className="border-b-1  mt-10 border-gray-300 dark:border-gray-500"></div>
 
-               <div className="mt-10">
+               {
+                  status === "idle" && (
+                     <div className="mt-10">
 
-                  <h2 className="font-bold text-2xl mb-4">Stay in the loop</h2> 
-                  <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
-                  <Input type = "email" placeholder="Email" className="w-80 mr-2" />
-                  <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto">Submit</Button>
+                        <h2 className="font-bold text-2xl mb-2">Stay in the loop</h2> 
+                        <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
+                        <Input type = "email" placeholder="Email" className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
+                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" onClick={handleSubscribe}>Submit</Button>
+                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                     </div>
+                  )
+               }
+               {
+                  status === "loading" && (
+                     <div className="mt-10">
 
-               </div>
+                        <h2 className="font-bold text-2xl mb-2">Stay in the loop</h2> 
+                        <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
+                        <Input type = "email" placeholder={email} className="w-80 mr-2" />
+                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" onClick={handleSubscribe} disabled={true}>Submit</Button>
+                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                     </div>
+
+
+                  )
+               }
+               {
+                  status === "success" && (
+                     <div className="mt-10">
+
+                        <h2 className="font-bold text-2xl mb-2">Thanks for subscibing</h2> 
+                        <p>Please check your inbox to confirm your email.</p> 
+                        <p>Used the wrong email? Subscribe with another one. <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>Go back</span> </p>
+                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                     </div>
+                  )
+               }
+
+               {
+                  status === "already" && (
+                     <div className="mt-10">
+
+                        <h2 className="font-bold text-2xl mb-2">You're already subscribed</h2> 
+                        <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
+                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                     </div>
+                  )
+               }
+               {
+                  status === "error" && (
+                     <div className="mt-10">
+
+                        <h2 className="font-bold text-2xl mb-2">Something went wrong, Please try aga</h2> 
+                        <Input type = "email" placeholder={email} className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
+                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" 
+                        onClick={handleSubscribe}>Submit</Button>
+                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                     </div>
+                  
+                  
+                  )
+               }
+
             </div>
          
 

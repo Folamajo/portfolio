@@ -10,25 +10,18 @@ import { useState } from "react"
 
 export default function Home() {
 
-   
    const [email, setEmail] = useState<string>("");
-   const [loading, setLoading] = useState<boolean>(false);
-   const [message, setMessage] = useState<string>("")
    const [errorMessage, setErrorMessage] = useState<string>("")
 
    type Status = "idle" | "loading" | "success" | "already" | "error"
    const [status, setStatus] = useState<Status>("idle")
 
    const handleSubscribe = async ()=>{
-      setStatus("loading")
       setErrorMessage("")
-
       if(email === "" || !email){
          setErrorMessage("Please enter your email.")
          return;
       }
-
-   
 
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -47,7 +40,6 @@ export default function Home() {
 
 
 
-
       const response = await fetch("/api/subscribe", {
          method: "POST",
          headers : { "Content-Type" : "application/json" },
@@ -56,22 +48,18 @@ export default function Home() {
       })
 
       const result = await response.json();
-      // setMessage(result.message)
-      // setLoading(false)
+
       if (result.code === 200){
          setStatus("already")
-         setMessage("You have already subscribed using this email! ")
-    
       }
       else if (result.code === 201){
          setStatus("success")
-         setMessage("Thank you for subscribing, please check your inbox to confirm.")
-        
       }
       else {
          setStatus("error")
+         
       }
-      console.log(result)
+
    }
 
    return (
@@ -96,88 +84,122 @@ export default function Home() {
                </p>
                <p className="mt-4">
                   If that sounds like your vibe, feel free to <Popover> 
-                     <PopoverTrigger> <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span></PopoverTrigger>
-                        <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">
-                           {
-                              status === "idle" && (
-                                 <>
-                                    <div className="mb-2">
-                                       <p className=" font-bold">Subscribe</p>
-                                       <p className="text-sm mt-2">Occassional updates only, no spam. Unsubscribe anytime.</p>
+                     <PopoverTrigger> 
+                        <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span>
+                     </PopoverTrigger>
+                     <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">
+                        {
+                           status === "idle" && (
+                              <>
+                                 <div className="mb-2">
+                                    <p className=" font-bold text-lg">Subscribe</p>
+                                    <p>Occassional updates only, no spam. Unsubscribe anytime.</p>
+                              
+                                 </div>
+                                 <Input   
+                                    type = "email" 
+                                    placeholder="Email" 
+                                    className="" 
+                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
+                                 />
+                                 {
+                                    errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                                 }
+                                 <Button  
+                                    type ="submit" variant="outline" 
+                                    className="bg-[#185dc5] text-white font-bold hover:opacity-90 cursor-pointer w-18  border-0 mt-2" 
+                                    onClick={handleSubscribe} disabled={ status !== "idle"}>Submit
+                                 </Button>
+                        
+                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                              </>
                                  
-                                    </div>
-                                    <Input   
-                                       type = "email" 
-                                       placeholder="Email" 
-                                       className="" 
-                                       onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
-                                    />
-                                    {
-                                       errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
-                                    }
-                                    <Button  
-                                       type ="submit" variant="outline" 
-                                       className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0 mt-2" 
-                                       onClick={handleSubscribe} disabled={ loading ? true : false}>Submit
-                                    </Button>
-                           
-                                    <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
-                                 </>
-                                  
-                              )
-                           }
+                           )
+                        }
 
-                           {
-                              status === "loading" && (
-                                 <>
-                                    <div className="mb-2">
-                                       <p className=" font-bold">Subscribe</p>
-                                       <p className="text-sm mt-2">Occassional updates only, no spam. Unsubscribe anytime.</p>
-                                 
-                                    </div>
-                                    <Input   
-                                       type = "email" 
-                                       placeholder="Email" 
-                                       className="" 
-                                       onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
-                                    />
-                                    {
-                                       errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
-                                    }
-                                    <Button  
-                                       type ="submit" variant="outline" 
-                                       className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0 mt-2" 
-                                       onClick={handleSubscribe} disabled={true} >Submit
-                                    </Button>
-                           
-                                    <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
-                                 </>
-
-                              )
-                           }
-                           
-                           {
-                              status === "success" && (
-                                 <>
-                                    <div className="mb-2">
-                                       <p className=" font-bold">Thanks for subscribing</p>
-                                       <p className="text-sm mt-2">Check your inbox to confirm your email</p>
-                                 
-                                    </div>
+                        {
+                           status === "loading" && (
+                              <>
+                                  <div className="mb-2">
+                                    <p className=" font-bold text-lg">Subscribe</p>
+                                    <p>Occassional updates only, no spam. Unsubscribe anytime.</p>
+                                 </div>
+                                 <Input   
+                                    type = "email" 
+                                    placeholder="Email" 
                                     
-                                    <p>Wrong email? subscribe with another one. <span className= "underline cursor-pointer" onClick={setStatus("idle")}>Go back</span>  </p>
-                           
-                                    <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
-                                 </>
+                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
+                                 />
+                                 {
+                                    errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                                 }
+                                 <Button  
+                                    type ="submit" variant="outline" 
+                                    className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0 mt-2" 
+                                    onClick={handleSubscribe} disabled={true} >Submit
+                                 </Button>
+                        
+                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                              </>
 
-                              )
-                           }
-                           
-                           
-                           
-                        </PopoverContent>
-                     </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
+                           )
+                        }
+                        
+                        {
+                           status === "success" && (
+                              <>
+                                 <div className="mb-2">
+                                    <p className=" font-bold text-lg">Thanks for subscribing </p>
+                                    <p>Please check your inbox to confirm your email. Used the wrong email? Subscribe with another one. <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>Go back</span> </p>
+                                    <p> </p>
+                                 </div>
+                                 
+                                 <p className="text-xs">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                              </>
 
+                           )
+                        }
+
+                        {
+                           status === "already" && (
+                              <>
+                                 
+                                 <div className=" text-lg font-bold mb-2">You're already subscribed</div>
+                                 <body>
+                                     <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
+                                 </body>
+                                 
+                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                              </>
+                           )
+                        }
+                        {
+                           status === "error" && (
+                              <>
+                                 <div className="mb-2">
+                                    <p className=" font-bold text-lg">Something went wrong, Please try again.</p>
+                              
+                                 </div>
+                                 <Input   
+                                    type = "email" 
+                                    placeholder= {email}
+                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
+                                 />
+                                 {
+                                    errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                                 }
+                                 <Button  
+                                    type ="submit" variant="outline" 
+                                    className="bg-[#185dc5] text-white font-bold hover:opacity-90 cursor-pointer w-18  border-0 mt-2" 
+                                    onClick={handleSubscribe} disabled={false}>Submit
+                                 </Button>
+                        
+                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                              </>
+                           )
+                        }
+                     </PopoverContent>
+                  </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
                </p>
 
                <p className="mt-4">Thanks for stopping by.</p>
