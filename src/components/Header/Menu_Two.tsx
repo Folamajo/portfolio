@@ -5,7 +5,7 @@ import { useSidebar } from '@/app/context/SidebarProvider';
 
 const Menu_Two = () => {
 
-   const {isSidebarOpen, toggle } = useSidebar()
+   const { toggle } = useSidebar()
 
    
   return (

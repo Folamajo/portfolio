@@ -8,7 +8,7 @@ import { TfiClose } from "react-icons/tfi";
 const Sidebar = () => {
 
    const { isSidebarOpen, close} = useSidebar()
-   // console.log(isSidebarOpen)
+
    const closeSidebar = (event: React.MouseEvent<HTMLDivElement>)=> {
       if (event.target !== event.currentTarget){
          return;
@@ -17,9 +17,6 @@ const Sidebar = () => {
    }
   return (
    <>
-   
-
-         
       <div className = {`overlay fixed   w-full h-screen bg-black/50 top-0 z-[80] transition-opacity duration-1500 ease-in-out ${isSidebarOpen ?  "opacity-100 pointer-events-auto": "opacity-0 pointer-events-none"}`} onClick={closeSidebar}>
         
       </div>

@@ -1,8 +1,5 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-// import { usePathname } from 'next/navigation'
-import { useTheme } from 'next-themes'
-import { PiMoonThin } from "react-icons/pi";
 import { ObserverContext } from '@/app/context/ObserverProvider';
 import Toggle from './Toggle';
 

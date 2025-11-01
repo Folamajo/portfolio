@@ -19,8 +19,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fola Majoyegbe – Software Engineer & Builder",
-  description: "Portfolio of Fola Majoyegbe — developer, builder, and creative thinker focused on delivering real value through software.",
+   title: "Fola Majoyegbe – Software Engineer & Builder",
+   description: "Portfolio of Fola Majoyegbe — developer, builder, and creative thinker focused on delivering real value through software.",
+   openGraph: {
+      title: "Fola Majoyegbe – Software Engineer & Builder",
+      description: "I build clean systems and useful products.",
+   
+   }
 };
 
 const inter = Inter({
