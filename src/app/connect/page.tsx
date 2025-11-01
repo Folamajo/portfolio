@@ -8,9 +8,9 @@ import { Button } from '@/components/ui/button'
 import { TfiEmail } from "react-icons/tfi";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
+import Link from 'next/link'
 
-
-const Page = () => {
+const Connect = () => {
 
    const [email, setEmail] = useState<string>("");
    const [errorMessage, setErrorMessage] = useState<string>("")
@@ -94,7 +94,7 @@ const Page = () => {
                         <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto submit_small" 
                            onClick={handleSubscribe}>Submit</Button>
                           
-                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                        <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                      </div>
                   )
                }
@@ -107,7 +107,7 @@ const Page = () => {
                         <Input type = "email" placeholder={email} className="w-80 mr-2" />
                         <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" onClick={handleSubscribe} disabled={true}>Submit</Button>
                         
-                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                        <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                      </div>
 
 
@@ -120,7 +120,7 @@ const Page = () => {
                         <h2 className="font-bold text-2xl mb-2">Thanks for subscibing</h2> 
                         <p>Please check your inbox to confirm your email.</p> 
                         <p>Used the wrong email? Subscribe with another one. <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>Go back</span> </p>
-                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                        <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                      </div>
                   )
                }
@@ -131,7 +131,7 @@ const Page = () => {
 
                         <h2 className="font-bold text-2xl mb-2">{"You're already subscribed"}</h2> 
                         <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
-                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                        <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                      </div>
                   )
                }
@@ -149,7 +149,7 @@ const Page = () => {
                         {
                            errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
                         }
-                        <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                        <p className="text-xs mt-2">I respect your privacy.<Link href="/privacy"className="underline">Privacy policy.</Link></p>
                      </div>
                   )
                }
@@ -165,4 +165,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Connect

@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Sidebar from "@/components/Sidebar"
 
 
-const Page = () => {
+const About = () => {
   return (
       <div className="flex flex-col items-center min-h-screen">
          <Sidebar />
@@ -57,4 +57,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default About

@@ -6,7 +6,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
-
+import Link from "next/link"
 
 export default function Home() {
 
@@ -111,7 +111,7 @@ export default function Home() {
                                     onClick={handleSubscribe} disabled={ status !== "idle"}>Submit
                                  </Button>
                         
-                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                                 <p className="text-xs mt-2">I respect your privacy.  <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                               </>
                                  
                            )
@@ -139,7 +139,7 @@ export default function Home() {
                                     onClick={handleSubscribe} disabled={true} >Submit
                                  </Button>
                         
-                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                                 <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                               </>
 
                            )
@@ -154,7 +154,7 @@ export default function Home() {
                                     <p> </p>
                                  </div>
                                  
-                                 <p className="text-xs">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                                 <p className="text-xs">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                               </>
 
                            )
@@ -169,7 +169,7 @@ export default function Home() {
                                      <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
                                  </body>
                                  
-                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                                 <p className="text-xs mt-2">I respect your privacy.  <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                               </>
                            )
                         }
@@ -194,7 +194,7 @@ export default function Home() {
                                     onClick={handleSubscribe} disabled={false}>Submit
                                  </Button>
                         
-                                 <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
+                                 <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
                               </>
                            )
                         }
