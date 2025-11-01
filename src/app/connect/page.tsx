@@ -88,11 +88,12 @@ const page = () => {
                         <h2 className="font-bold text-2xl mb-2">Stay in the loop</h2> 
                         <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
                         <Input type = "email" placeholder="Email" className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
-                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" 
+                        {
+                           errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                        }
+                        <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto submit_small" 
                            onClick={handleSubscribe}>Submit</Button>
-                           {
-                              errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
-                           }
+                          
                         <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
                      </div>
                   )
@@ -140,6 +141,9 @@ const page = () => {
 
                         <h2 className="font-bold text-2xl mb-2">Something went wrong, Please try aga</h2> 
                         <Input type = "email" placeholder={email} className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
+                        {
+                           errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
+                        }
                         <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" 
                         onClick={handleSubscribe}>Submit</Button>
                         {

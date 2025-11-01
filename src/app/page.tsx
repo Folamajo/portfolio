@@ -87,7 +87,7 @@ export default function Home() {
                      <PopoverTrigger> 
                         <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span>
                      </PopoverTrigger>
-                     <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md ">
+                     <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md mr-2">
                         {
                            status === "idle" && (
                               <>

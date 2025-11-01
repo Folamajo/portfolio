@@ -67,6 +67,12 @@ body {
    }
 }
 
+@media (max-width: 456px){
+   .submit_small{
+      margin-top: 0.6em;
+   }
+}
+
 @media (min-width: 881px){
    .menu_two{
       display:none;
