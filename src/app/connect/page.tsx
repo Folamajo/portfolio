@@ -72,8 +72,8 @@ const Page = () => {
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full flex flex-col items-center'>
             <h1 className='font-bold text-3xl '>Connect</h1>
             <div className= "mt-6">
-               <h2 className="font-bold text-2xl mb-4">Let's connect</h2> 
-               <p>Whether it's about software, ideas, or design, I am always open to connection.</p>
+               <h2 className="font-bold text-2xl mb-4">{"Let's connect"}</h2> 
+               <p>{"Whether it's about software, ideas, or design, I am always open to connection."}</p>
                <ul className="flex gap-10  justify-center mt-2">
                   <a href="mailto:fmajoyegbe@gmail.com"><TfiEmail className="text-5xl hover:opacity-80 cursor-pointer"/></a>
                   <a href ="https://www.linkedin.com/in/fola-majoyegbe-85a19b98/" target="_blank" rel="no_opener noreferer"> <FaLinkedin className="text-5xl hover:opacity-80 cursor-pointer"/></a>

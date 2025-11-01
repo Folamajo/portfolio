@@ -18,7 +18,7 @@ const Page = () => {
       <main className=' main_content max-w-[57em] mb-6 px-4'>
          <h1 className='font-bold text-3xl '>About </h1>
          
-         <div>//IMAGE</div>
+         <div>ADD IMAGE</div>
 
 
          <div className= "mt-6">
