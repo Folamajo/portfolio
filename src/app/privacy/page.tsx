@@ -45,7 +45,7 @@ const Privacy = () => {
 
             <div className="mt-4">
                <h3 className="font-bold">4. Cookies</h3>
-               <p>Right now, folamajo.com doesnt use cookies. If I ever add analytics or other features that require them, I'll update this policy and let you know</p>
+               <p>Right now,  <Link className="hover:opacity-90" href="/">folamajo.com</Link> {"doesnt use cookies. If I ever add analytics or other features that require them, I'll update this policy and let you know"}</p>
              
             </div>
 
