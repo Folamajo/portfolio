@@ -86,7 +86,7 @@ const Page = () => {
                      <div className="mt-10">
 
                         <h2 className="font-bold text-2xl mb-2">Stay in the loop</h2> 
-                        <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
+                        <p className="mb-2">{"If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life."}</p>
                         <Input type = "email" placeholder="Email" className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
                         {
                            errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
@@ -103,7 +103,7 @@ const Page = () => {
                      <div className="mt-10">
 
                         <h2 className="font-bold text-2xl mb-2">Stay in the loop</h2> 
-                        <p className="mb-2">If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life.</p>
+                        <p className="mb-2">{"If you would like to follow along as I build projects, test ideas and document what I'm learning in tech and in life."}</p>
                         <Input type = "email" placeholder={email} className="w-80 mr-2" />
                         <Button size="lg" variant="outline" className="bg-[#185dc5] border-0 text-white font-bold hover:opacity-80 cursor-pointer mx-auto" onClick={handleSubscribe} disabled={true}>Submit</Button>
                         
@@ -129,7 +129,7 @@ const Page = () => {
                   status === "already" && (
                      <div className="mt-10">
 
-                        <h2 className="font-bold text-2xl mb-2">You're already subscribed</h2> 
+                        <h2 className="font-bold text-2xl mb-2">{"You're already subscribed"}</h2> 
                         <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
                         <p className="text-xs mt-2">I respect your privacy. <span className="underline">Privacy policy.</span></p>
                      </div>

@@ -71,19 +71,19 @@ export default function Home() {
         
 
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
-            <h1 className='font-bold text-3xl '>👋🏾 Hello, I'm Fola</h1>
+            <h1 className='font-bold text-3xl '>👋🏾 {"Hello, I'm Fola"}</h1>
             <div className= "mt-6">
                <p>
-                  I’m a software engineer, builder, and creative thinker based in London. This site is my digital home, a space to document the things I'm creating, thinking about and learning along the way. 
+                  {"I'm a software engineer, builder, and creative thinker based in London. This site is my digital home, a space to document the things I'm creating, thinking about and learning along the way. "}
                </p>
 
                <p className="mt-4">
-                  I care  about solving real problems through code and design, and I'm constantly experimenting with new ideas, tools and technologies. Sometimes it's a product, sometimes it's a blog post, but it's always driven by curiosity and the desire to grow.</p>
+                  {"I care  about solving real problems through code and design, and I'm constantly experimenting with new ideas, tools and technologies. Sometimes it's a product, sometimes it's a blog post, but it's always driven by curiosity and the desire to grow."}</p>
                <p className="mt-4">
-                  Here, You'll find my projects, writings and the occasionsal reflection on building, discipline and growth — both technical and personal.
+                 {" Here, You'll find my projects, writings and the occasionsal reflection on building, discipline and growth — both technical and personal."}
                </p>
                <p className="mt-4">
-                  If that sounds like your vibe, feel free to <Popover> 
+                  {"If that sounds like your vibe, feel free to "}<Popover> 
                      <PopoverTrigger> 
                         <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span>
                      </PopoverTrigger>
@@ -164,7 +164,7 @@ export default function Home() {
                            status === "already" && (
                               <>
                                  
-                                 <div className=" text-lg font-bold mb-2">You're already subscribed</div>
+                                 <div className=" text-lg font-bold mb-2">{"You're already subscribed"}</div>
                                  <body>
                                      <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
                                  </body>

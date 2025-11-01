@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import ObserverProvider from "./context/ObserverProvider";
 import ThemeProvider from "./context/ThemeProvider";
@@ -8,15 +8,7 @@ import SidebarProvider from "./context/SidebarProvider";
 
 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
    title: "Fola Majoyegbe – Software Engineer & Builder",

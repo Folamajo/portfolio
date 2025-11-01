@@ -1,7 +1,7 @@
 "use client"
 import { usePathname } from 'next/navigation'
 import React from 'react'
-import { useTheme } from 'next-themes';
+
 import Link from 'next/link';
 import Toggle from './Toggle';
 

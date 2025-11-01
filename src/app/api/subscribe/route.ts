@@ -2,24 +2,13 @@ export const runtime = "nodejs";
 
 const mailerLiteApiKey = process.env.MAILERLITE_API_KEY
 const mailerLiteGroupId = process.env.MAILERLITE_GROUP_ID
-const mailerLiteFormId  = process.env.MAILERLITE_FORM_ID
-
-
-type subscribeStatusType = "pending" | "active"
-let subscribeStatus : subscribeStatusType;
-
-
-process.env.MAILERLITE_SUBSCRIBE_STATUS === "pending" || process.env.MAILERLITE_SUBSCRIBE_STATUS === "active" ? subscribeStatus = process.env.MAILERLITE_SUBSCRIBE_STATUS : subscribeStatus = "pending"
-   
 
 
 
 
 
 export const POST = async(request: Request)=> {
-   if(request){
-      console.log("request recieved")
-   }
+
 
    if (!mailerLiteApiKey || !mailerLiteGroupId){
       return new Response(
@@ -92,7 +81,7 @@ export const POST = async(request: Request)=> {
 
 
       const result = await subscribe(subscriptionPayload)
-      console.log(result)
+
 
 
       return new Response( 
