@@ -1,10 +1,16 @@
-import React from 'react'
-import {Moon, Sun } from 'lucide-react'
+
+import React, { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { PiMoonLight, PiSunLight } from 'react-icons/pi';
 
 const Toggle = () => {
    const {theme, setTheme} = useTheme()
+   const [mounted, setMounted] = useState<boolean>(false)
+
+   useEffect(()=> {setMounted(true)}, [])
+   if(!mounted) return <button aria-hidden="true" className="w-6 h-6 ml-auto" />;
+
+
 
    const toggleBtn = () => {
       const body = document.body;

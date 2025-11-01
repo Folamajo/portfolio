@@ -6,11 +6,6 @@ import { useSidebar } from '@/app/context/SidebarProvider';
 const Menu_Two = () => {
 
    const {isSidebarOpen, toggle } = useSidebar()
-   // const [openSideBar, setOpenSideBar] = useState<boolean>(false)
-   useEffect(()=>{
-
-      console.log(isSidebarOpen)
-   }, [isSidebarOpen])
 
    
   return (
