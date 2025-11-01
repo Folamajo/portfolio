@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 import Sidebar from "@/components/Sidebar"
 
 
-const page = () => {
+const Page = () => {
   return (
       <div className="flex flex-col items-center min-h-screen">
          <Sidebar />
@@ -24,13 +24,13 @@ const page = () => {
          <div className= "mt-6">
             <h1 className="text-xl font-bold">Who is Fola?</h1>
             <p className="mt-4">
-               I was born in Nigeria and grew up in Ireland, two places that taught me how to adapt fast and stay curious. My degree was in biopharmaceuticals, but at the time, I wasn’t sure what I really wanted to do, so I took the opportunity do some traveling.
+               I was born in Nigeria and grew up in Ireland, two places that taught me how to adapt fast and stay curious. My degree was in biopharmaceuticals, but at the time, I wasn't sure what I really wanted to do, so I took the opportunity do some traveling.
             </p>
             <p className="mt-4">
                Over the years, I've lived in a few different corners of the world. A few months in New York, nearly a year in the Netherlands, and two unforgettable years in Vietnam. Living and working across cultures taught me resilience, adaptability, and perspective, all of which now shape how I build, think, and collaborate.
             </p>
             <p className="mt-4">
-               After years of exploring, I came back home and decided to learn how to code. I started with a bootcamp and kept teaching myself from there. That decision changed everything. Today, I’m a software engineer by trade — building tools, solving problems, and chasing mastery in tech.
+               After years of exploring, I came back home and decided to learn how to code. I started with a bootcamp and kept teaching myself from there. That decision changed everything. Today, I'm a software engineer by trade — building tools, solving problems, and chasing mastery in tech.
             </p>
 
          </div>
@@ -40,7 +40,7 @@ const page = () => {
 
             </p>
             <p className="mt-4">
-              Outside of movement and sport, I take time to read. Lately, philosophy and Nietzsche have been at the center of that. I’m fascinated by how ideas shape creativity, systems, and problem-solving. That same curiosity also fuels my love for art and design, and how both connect with technology and culture.
+              Outside of movement and sport, I take time to read. Lately, philosophy and Nietzsche have been at the center of that. I'm fascinated by how ideas shape creativity, systems, and problem-solving. That same curiosity also fuels my love for art and design, and how both connect with technology and culture.
             </p>
 
          </div>
@@ -58,4 +58,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

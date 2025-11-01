@@ -20,11 +20,7 @@ export const POST = async(request: Request)=> {
    if(request){
       console.log("request recieved")
    }
-   // Post route accepts data and validates the email data 
-   // Returns value to the user
-   // Resoponse returns an object and accepts two parameters a body which is usually a message we want to send to backend  and options
 
-   //Guard against missing config 
    if (!mailerLiteApiKey || !mailerLiteGroupId){
       return new Response(
          JSON.stringify({message: "Server misconfiguration: missing env vars"}),
@@ -40,7 +36,7 @@ export const POST = async(request: Request)=> {
       return emailRegex.test(email)
    };
 
-// status: "unconfirmed" | "active"
+
    async function subscribe(payload: {email: string, groups: string[], }){
 
 
@@ -59,7 +55,7 @@ export const POST = async(request: Request)=> {
          })
 
 
-         // const result = await response.json()
+      
          if(response.status === 201){
             return {ok : true, code : 201, message : "Subscribed!" }
          }
@@ -91,14 +87,14 @@ export const POST = async(request: Request)=> {
       const subscriptionPayload = {
          email : normalisedEmail,
          groups : [mailerLiteGroupId],
-         // status : subscribeStatus
+    
       }
 
 
       const result = await subscribe(subscriptionPayload)
       console.log(result)
 
-      // return new Response(result?.message)
+
       return new Response( 
          JSON.stringify({ok: result?.ok, code: result.code, message : result?.message, email : subscriptionPayload.email}), 
          {
@@ -118,5 +114,3 @@ export const POST = async(request: Request)=> {
 
 
 
-
-// const nextPublicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL

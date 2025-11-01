@@ -5,7 +5,7 @@ import "./globals.css";
 import ObserverProvider from "./context/ObserverProvider";
 import ThemeProvider from "./context/ThemeProvider";
 import SidebarProvider from "./context/SidebarProvider";
-import { cookies } from "next/headers";
+
 
 
 const geistSans = Geist({

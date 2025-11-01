@@ -10,7 +10,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 
 
-const page = () => {
+const Page = () => {
 
    const [email, setEmail] = useState<string>("");
    const [errorMessage, setErrorMessage] = useState<string>("")
@@ -165,4 +165,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

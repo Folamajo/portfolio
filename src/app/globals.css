@@ -13,12 +13,6 @@
   --font-mono: var(--font-geist-mono);
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 
 :root {
@@ -90,10 +84,6 @@ body {
 }
 
 
-/* @keyframes blink {
-   0%, 100%{ background-color: transparent; }
-   50% { background-color: black; }
-} */
 
 @keyframes blink {
    0%, 100% {background-color: var(--bg-start-end)}
@@ -101,7 +91,6 @@ body {
 }
 
 .blinking_cursor{
-   /* background-color:black; */
 
    --bg-start-end: transparent;
    --bg-middle: black;
@@ -111,7 +100,7 @@ body {
 }
 
 .dark .blinking_cursor{
-   /* background-color:black; */
+
 
    --bg-start-end: transparent;
    --bg-middle: white;
