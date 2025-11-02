@@ -139,7 +139,7 @@ const Connect = () => {
                   status === "error" && (
                      <div className="mt-10">
 
-                        <h2 className="font-bold text-2xl mb-2">Something went wrong, Please try aga</h2> 
+                        <h2 className="font-bold text-2xl mb-2">Something went wrong, Please try again</h2> 
                         <Input type = "email" placeholder={email} className="w-80 mr-2"  onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}/>
                         {
                            errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
