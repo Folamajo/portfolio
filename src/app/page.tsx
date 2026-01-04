@@ -74,7 +74,7 @@ export default function Home() {
             <h1 className='font-bold text-3xl '>👋🏾 {"Hello, I'm Fola"}</h1>
             <div className= "mt-6">
                <p>
-                  {"I'm a software engineer, builder, and creative thinker based in London. This site is my digital home, a space to document the things I'm creating, thinking about and learning along the way. "}
+                  {"I’m a software engineer transitioning into AI engineering by building production systems with a focus on architecture, data, and correctness. "}
                </p>
 
                <p className="mt-4">
