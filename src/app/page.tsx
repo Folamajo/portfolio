@@ -71,18 +71,49 @@ export default function Home() {
         
 
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
-            <h1 className='font-bold text-3xl '>👋🏾 {"Hello, I'm Fola"}</h1>
+            <h1 className='font-bold text-3xl '>👋🏾 {"hi,"}</h1>
             <div className= "mt-6">
                <p>
-                  {"I’m a software engineer transitioning into AI engineering by building production systems with a focus on architecture, data, and correctness. "}
+                  {"I'm Fola, i am a software engineer working toward AI engineering by building real systems. My focus is on production-grade products and infrastructure."}
                </p>
 
                <p className="mt-4">
-                  {"I care  about solving real problems through code and design, and I'm constantly experimenting with new ideas, tools and technologies. Sometimes it's a product, sometimes it's a blog post, but it's always driven by curiosity and the desire to grow."}</p>
+                  {"This site documents hands-on engineering work, including AI-powered systems, design decisions, and the tradeoffs involved in taking ideas to production."}</p>
                <p className="mt-4">
-                 {" Here, You'll find my projects, writings and the occasionsal reflection on building, discipline and growth — both technical and personal."}
+                 {" What you’ll find here:"}
                </p>
-               <p className="mt-4">
+               <div>
+                  <ul className ='pl-4'>
+                     <li>{"Projects: End-to-end systems I am actively building"}</li>
+                     <li>{"Writing: Detailed analysis of architecture, applied machine learning, and engineering decisions"}</li>
+                     <li>{"Case study–style reflections: What failed, what scaled, and the reasons behind both"}</li>
+                  </ul>
+               </div>
+
+               <p className="mt-4">{"The goal of this site is to document real engineering work in the open."}</p>
+               <p className="=mt-2">If you want to understand how I think about software and AI systems, start with the <Link href="/blog">blog</Link></p>
+               <p>If you want to see concrete implementations, visit the <Link href="/projects">projects</Link>  section.</p>
+               
+               {/*  */}
+               <p className="mt-4">Thanks for stopping by.</p>
+            </div>
+         </main>
+
+
+         <footer 
+            className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black transition-colors duration-2000">
+            <div className="w-[57em] ">
+               <Footer />
+            </div>
+         </footer>
+      </div>
+    
+   )
+}
+
+
+
+{/* <p className="mt-4">
                   {"If that sounds like your vibe, feel free to "}<Popover> 
                      <PopoverTrigger> 
                         <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span>
@@ -200,21 +231,4 @@ export default function Home() {
                         }
                      </PopoverContent>
                   </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
-               </p>
-               <p className="mt-4">Thanks for stopping by.</p>
-            </div>
-         </main>
-
-
-         <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black transition-colors duration-2000">
-            <div className="w-[57em] ">
-               <Footer />
-            </div>
-         </footer>
-      </div>
-    
-   )
-}
-
-
-
+               </p> */}
