@@ -63,9 +63,11 @@ export default function Home() {
    }
 
    return (
-      <div className=" font-medium flex flex-col items-center min-h-screen tracking-normal "
-            style= {{ fontFamily : "var(--font-mono", color:  "black"}}
+      <div 
+         className=" font-medium flex flex-col items-center min-h-screen"
+   
       >
+      
          <Sidebar />
          <header className= ' w-full flex justify-center '>
             <Header />
@@ -73,10 +75,10 @@ export default function Home() {
         
 
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
-            <h1 className='font-bold text-2xl '>{"Hi, I'm Fola"}</h1>
+            <h1 className='font-extrabold text-2xl '>{"hi, "}</h1>
             <div className= "mt-4">
                <p>
-                  {"I am a software engineer working toward AI engineering by building production-grade products and infrastructure."}
+                  {"I'm Fola, a software engineer working toward AI engineering by building production-grade products and infrastructure."}
                </p>
 
                <p className="mt-4">
@@ -91,7 +93,7 @@ export default function Home() {
    
                <p className="mt-4">{"The goal of this site is to document real engineering work in the open."}</p>
                <p className="mt-4">If you want to understand how I think about software and AI systems, start with the <Link href="/blog" className="underline hover:opacity-80">blog</Link>.</p>
-               <p>If you want to see concrete implementations, visit the <Link href="/projects" className="underline hover:opacity-80">projects</Link>  section.</p>
+               <p>Else if you want to see concrete implementations, visit the <Link href="/projects" className="underline hover:opacity-80">projects</Link>  section.</p>
                
             </div>
          </main>
@@ -109,123 +111,3 @@ export default function Home() {
 }
 
 
-
-{/* <p className="mt-4">
-                  {"If that sounds like your vibe, feel free to "}<Popover> 
-                     <PopoverTrigger> 
-                        <span className="font-bold hover:opacity-80 cursor-pointer text-[#185dc5]">subscribe</span>
-                     </PopoverTrigger>
-                     <PopoverContent className=" flex flex-col bg-white border-1 border-gray-300 dark:text-white dark:bg-[#222] dark:border-gray-500 text-md mr-2">
-                        {
-                           status === "idle" && (
-                              <>
-                                 <div className="mb-2">
-                                    <p className=" font-bold text-lg">Subscribe</p>
-                                    <p>Occassional updates only, no spam. Unsubscribe anytime.</p>
-                              
-                                 </div>
-                                 <Input   
-                                    type = "email" 
-                                    placeholder="Email" 
-                                    className="" 
-                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
-                                 />
-                                 {
-                                    errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
-                                 }
-                                 <Button  
-                                    type ="submit" variant="outline" 
-                                    className="bg-[#185dc5] text-white font-bold hover:opacity-90 cursor-pointer w-18  border-0 mt-2" 
-                                    onClick={handleSubscribe} disabled={ status !== "idle"}>Submit
-                                 </Button>
-                        
-                                 <p className="text-xs mt-2">I respect your privacy.  <Link href="/privacy"className="underline">Privacy policy.</Link></p>
-                              </>
-                                 
-                           )
-                        }
-
-                        {
-                           status === "loading" && (
-                              <>
-                                  <div className="mb-2">
-                                    <p className=" font-bold text-lg">Subscribe</p>
-                                    <p>Occassional updates only, no spam. Unsubscribe anytime.</p>
-                                 </div>
-                                 <Input   
-                                    type = "email" 
-                                    placeholder="Email" 
-                                    
-                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
-                                 />
-                                 {
-                                    errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
-                                 }
-                                 <Button  
-                                    type ="submit" variant="outline" 
-                                    className="bg-[#185dc5] text-white font-bold hover:opacity-80 cursor-pointer w-18  border-0 mt-2" 
-                                    onClick={handleSubscribe} disabled={true} >Submit
-                                 </Button>
-                        
-                                 <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
-                              </>
-
-                           )
-                        }
-                        
-                        {
-                           status === "success" && (
-                              <>
-                                 <div className="mb-2">
-                                    <p className=" font-bold text-lg">Thanks for subscribing </p>
-                                    <p>Please check your inbox to confirm your email. Used the wrong email? Subscribe with another one. <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>Go back</span> </p>
-                                    <p> </p>
-                                 </div>
-                                 
-                                 <p className="text-xs">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
-                              </>
-
-                           )
-                        }
-
-                        {
-                           status === "already" && (
-                              <>
-                                 
-                                 <div className=" text-lg font-bold mb-2">{"You're already subscribed"}</div>
-                                 <body>
-                                     <p>Want to use a  <span className= "underline cursor-pointer" onClick={()=>setStatus("idle")}>different email?</span>  </p>
-                                 </body>
-                                 
-                                 <p className="text-xs mt-2">I respect your privacy.  <Link href="/privacy"className="underline">Privacy policy.</Link></p>
-                              </>
-                           )
-                        }
-                        {
-                           status === "error" && (
-                              <>
-                                 <div className="mb-2">
-                                    <p className=" font-bold text-lg">Something went wrong, Please try again.</p>
-                              
-                                 </div>
-                                 <Input   
-                                    type = "email" 
-                                    placeholder= {email}
-                                    onChange={(event: React.ChangeEvent<HTMLInputElement>)=>setEmail(event?.target.value )}
-                                 />
-                                 {
-                                    errorMessage ? <p className="text-red-600 text-xs mt-1">{errorMessage}</p> : ""
-                                 }
-                                 <Button  
-                                    type ="submit" variant="outline" 
-                                    className="bg-[#185dc5] text-white font-bold hover:opacity-90 cursor-pointer w-18  border-0 mt-2" 
-                                    onClick={handleSubscribe} disabled={false}>Submit
-                                 </Button>
-                        
-                                 <p className="text-xs mt-2">I respect your privacy. <Link href="/privacy"className="underline">Privacy policy.</Link></p>
-                              </>
-                           )
-                        }
-                     </PopoverContent>
-                  </Popover> to get my posts delivered every couple of weeks, no spam, just throughtful work in progress. 
-               </p> */}

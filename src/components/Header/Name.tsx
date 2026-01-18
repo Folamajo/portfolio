@@ -17,7 +17,7 @@ const Name = ({ pageName } : NameProps) => {
    
 
    return (
-      <div className= " ">
+      <div className= " "  style= {{ fontFamily : "var(--font-mono", color:  "black"}}>
          <div className=' pt-4 px-4 flex items-center justify-between  max-w-[58em] relative mx-auto'>
             <div className=' flex w-[21em]'>
                <p className="mono font-bold text-[1.2em]"><Link href="/">fola</Link>@website {cleanedPathName ? cleanedPathName : '~'} %</p>  <p className="ml-1 mono text-[1.2em]">{pageName}</p> <div className='blinking_cursor '></div> 

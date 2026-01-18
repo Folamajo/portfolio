@@ -44,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} ${mono.className} antialiased `}
+        className={`font-medium ${inter.className} ${mono.className} antialiased `}  style= {{ fontFamily : "var(--font-mono", color:  "black"}}
       >
          <ThemeProvider 
             attribute='class' 
