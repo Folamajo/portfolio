@@ -1,6 +1,6 @@
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import ObserverProvider from "./context/ObserverProvider";
 import ThemeProvider from "./context/ThemeProvider";
@@ -24,6 +24,12 @@ const inter = Inter({
    subsets: ['latin'],
 })
 
+const mono = JetBrains_Mono({
+   subsets: ["latin"],
+   variable: "--font-mono",
+
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -38,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.className} antialiased `}
+        className={`${inter.className} ${mono.className} antialiased `}
       >
          <ThemeProvider 
             attribute='class' 

@@ -63,7 +63,9 @@ export default function Home() {
    }
 
    return (
-      <div className="flex flex-col items-center min-h-screen tracking-tight ">
+      <div className=" font-medium flex flex-col items-center min-h-screen tracking-normal "
+            style= {{ fontFamily : "var(--font-mono", color:  "black"}}
+      >
          <Sidebar />
          <header className= ' w-full flex justify-center '>
             <Header />
@@ -71,31 +73,26 @@ export default function Home() {
         
 
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
-            <h1 className='font-bold text-3xl '>👋🏾 {"hi,"}</h1>
-            <div className= "mt-6">
+            <h1 className='font-bold text-2xl '>{"Hi, I'm Fola"}</h1>
+            <div className= "mt-4">
                <p>
-                  {"I'm Fola, i am a software engineer working toward AI engineering by building real systems. My focus is on production-grade products and infrastructure."}
+                  {"I am a software engineer working toward AI engineering by building production-grade products and infrastructure."}
                </p>
 
                <p className="mt-4">
-                  {"This site documents hands-on engineering work, including AI-powered systems, design decisions, and the tradeoffs involved in taking ideas to production."}</p>
-               <p className="mt-4">
-                 {" What you’ll find here:"}
-               </p>
-               <div>
-                  <ul className ='pl-4'>
-                     <li>{"Projects: End-to-end systems I am actively building"}</li>
-                     <li>{"Writing: Detailed analysis of architecture, applied machine learning, and engineering decisions"}</li>
-                     <li>{"Case study–style reflections: What failed, what scaled, and the reasons behind both"}</li>
-                  </ul>
-               </div>
-
-               <p className="mt-4">{"The goal of this site is to document real engineering work in the open."}</p>
-               <p className="=mt-2">If you want to understand how I think about software and AI systems, start with the <Link href="/blog">blog</Link></p>
-               <p>If you want to see concrete implementations, visit the <Link href="/projects">projects</Link>  section.</p>
+                  {"This site documents hands-on engineering work: AI-powered systems, design decisions, and the tradeoffs involved in taking ideas to production."}</p>
                
-               {/*  */}
-               <p className="mt-4">Thanks for stopping by.</p>
+               <p className="mt-4">{"What you’ll find here:"} </p>
+               <ul className ='pl-5 list-disc'>
+                  <li>End-to-end projects I'm actively building</li>
+                  <li>Deep dives into architecture, applied machine learning, and engineering decisions</li>
+                  <li>{"Case study–style reflections on what failed, what scaled and why"}</li>
+               </ul>
+   
+               <p className="mt-4">{"The goal of this site is to document real engineering work in the open."}</p>
+               <p className="mt-4">If you want to understand how I think about software and AI systems, start with the <Link href="/blog" className="underline hover:opacity-80">blog</Link>.</p>
+               <p>If you want to see concrete implementations, visit the <Link href="/projects" className="underline hover:opacity-80">projects</Link>  section.</p>
+               
             </div>
          </main>
 
