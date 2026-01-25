@@ -43,28 +43,28 @@ const Sidebar = () => {
 
                <div className="mt-10 px-4">
 
-                     <h1 className="text-lg font-bold tracking-tight">SECTIONS</h1>
+                     <h1 className="text-lg font-bold tracking-tight">sections</h1>
                      <ul className='flex gap-2  flex-col mt-4 text-md tracking-tight'>
                   <li className= "hover:opacity-70">
                      <Link href='/about' 
-                     >About</Link>
+                     >about</Link>
                   </li>
                   <li className= "hover:opacity-70">
                      <Link href='/projects'   
-                     >Projects</Link>
+                     >projects</Link>
                   </li>
                   <li className= "hover:opacity-70">
                      <Link href='/blog'
-                     >Blog</Link>
+                     >blog</Link>
                   </li>
                   <li className= "hover:opacity-70">
                      <Link href='/connect'
-                     >Connect</Link>
+                     >connect</Link>
                   </li>
-                  <li className= "hover:opacity-70">
+                  {/* <li className= "hover:opacity-70">
                      <Link href='/now'
                      >Now</Link>
-                  </li>
+                  </li> */}
                </ul>
             </div>
 

@@ -20,11 +20,11 @@ const Name = ({ pageName } : NameProps) => {
       <div className= " "  style= {{ fontFamily : "var(--font-mono", color:  "black"}}>
          <div className=' pt-4 px-4 flex items-center justify-between  max-w-[58em] relative mx-auto'>
             <div className=' flex w-[21em]'>
-               <p className="mono font-bold text-[1.2em]"><Link href="/">fola</Link>@website {cleanedPathName ? cleanedPathName : '~'} %</p>  <p className="ml-1 mono text-[1.2em]">{pageName}</p> <div className='blinking_cursor '></div> 
+               <p className="mono font-bold text-[1.2em]"><Link href="/">fola</Link>@website {cleanedPathName ? cleanedPathName : '~'} %</p>  <p className="ml-1 mono font-bold text-[1.2em]">{pageName}</p> <div className='blinking_cursor '></div> 
             </div>
 
             <div className=" absolute  flex left-1/2 transform -translate-x-1/2">
-               <h1 className='text-3xl font-bold tracking-tight'>
+               <h1 className='text-3xl font-extrabold tracking-tight'>
                   <Link href="/">
                      Fola Majoyegbe
                   </Link>
