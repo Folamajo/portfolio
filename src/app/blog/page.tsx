@@ -16,6 +16,9 @@ const Blog = () => {
 
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
             <h1 className='font-extrabold text-2xl '>blog </h1>
+            <div className="mt-4">
+               coming soon ...
+            </div>
          </main>
          
          <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">

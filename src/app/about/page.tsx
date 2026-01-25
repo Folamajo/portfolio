@@ -32,7 +32,7 @@ const About = () => {
                   {"My path into tech wasn’t linear. I studied biopharmaceuticals, lived and worked across multiple countries, and eventually taught myself how to code. That background shaped how I approach complex problems: reasoning from first principles, staying comfortable in ambiguity, and improving through iteration."}
                </p>
                <p className="mt-4">
-               {"Outside of code, I play football and support Arsenal (a long-term exercise in emotional discipline). I also train calisthenics and Kickboxing/Muay Thai."}
+               {"Outside of code, I play football and support Arsenal (a long-term exercise in emotional discipline). I also train calisthenics and Kickboxing/Muay Thai. I also enjoy reading — particularly about philosophy. "}
                </p>
 
             </div>

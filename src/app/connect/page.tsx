@@ -12,68 +12,68 @@ import Link from 'next/link'
 
 const Connect = () => {
 
-   const [email, setEmail] = useState<string>("");
-   const [errorMessage, setErrorMessage] = useState<string>("")
+   // const [email, setEmail] = useState<string>("");
+   // const [errorMessage, setErrorMessage] = useState<string>("")
    
-   type Status = "idle" | "loading" | "success" | "already" | "error"
-   const [status, setStatus] = useState<Status>("idle")
+   // type Status = "idle" | "loading" | "success" | "already" | "error"
+   // const [status, setStatus] = useState<Status>("idle")
    
-   const handleSubscribe = async ()=>{
-         setErrorMessage("")
-         if(email === "" || !email){
-            setErrorMessage("Please enter your email.")
-            return;
-         }
+   // const handleSubscribe = async ()=>{
+   //       setErrorMessage("")
+   //       if(email === "" || !email){
+   //          setErrorMessage("Please enter your email.")
+   //          return;
+   //       }
    
-         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   //       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
    
-         const validateEmail = (emailInput:string):boolean => {
-            return emailRegex.test(emailInput)
-         }
+   //       const validateEmail = (emailInput:string):boolean => {
+   //          return emailRegex.test(emailInput)
+   //       }
    
-         let normalisedEmail;
-         if (!validateEmail(email)){
-            setErrorMessage("Please enter a valid email.")
-            return
-         }
-         else {
-            normalisedEmail = email.trim().toLowerCase()
-         }
+   //       let normalisedEmail;
+   //       if (!validateEmail(email)){
+   //          setErrorMessage("Please enter a valid email.")
+   //          return
+   //       }
+   //       else {
+   //          normalisedEmail = email.trim().toLowerCase()
+   //       }
    
    
    
-         const response = await fetch("/api/subscribe", {
-            method: "POST",
-            headers : { "Content-Type" : "application/json" },
-            body: JSON.stringify({email : normalisedEmail})
+   //       const response = await fetch("/api/subscribe", {
+   //          method: "POST",
+   //          headers : { "Content-Type" : "application/json" },
+   //          body: JSON.stringify({email : normalisedEmail})
    
-         })
+   //       })
    
-         const result = await response.json();
+   //       const result = await response.json();
    
-         if (result.code === 200){
-            setStatus("already")
-         }
-         else if (result.code === 201){
-            setStatus("success")
-         }
-         else {
-            setStatus("error")
+   //       if (result.code === 200){
+   //          setStatus("already")
+   //       }
+   //       else if (result.code === 201){
+   //          setStatus("success")
+   //       }
+   //       else {
+   //          setStatus("error")
             
-         }
+   //       }
    
-   }
+   // }
    return (
       <div className="flex flex-col items-center min-h-screen">
          <Sidebar />
          <header className= 'w-full flex justify-center '>
             <Header />
          </header>
-         <main className=' main_content max-w-[58em] mb-6 px-4 w-full flex flex-col items-center'>
+         <main className=' main_content max-w-[58em] mb-6 px-4 w-full flex flex-col '>
             <h1 className='font-extrabold text-2xl '>connect </h1>
             <div className= "mt-6">
-               <h2 className="font-extrabold text-xl mb-4">{"Let's connect"}</h2> 
-               <p>{"Whether it's about software, ideas, or design, I am always open to connection."}</p>
+               {/* <h2 className="font-extrabold text-xl mb-4">{"let's connect"}</h2>  */}
+               <p>{"Open to thoughtful conversations about engineering, systems, and building real products."}</p>
                <ul className="flex gap-10  justify-center mt-2">
                   <a href="mailto:fmajoyegbe@gmail.com"><TfiEmail className="text-5xl hover:opacity-80 cursor-pointer"/></a>
                   <a href ="https://www.linkedin.com/in/fola-majoyegbe-85a19b98/" target="_blank" rel="no_opener noreferer"> <FaLinkedin className="text-5xl hover:opacity-80 cursor-pointer"/></a>
