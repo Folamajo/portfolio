@@ -19,7 +19,7 @@ const Header = () => {
          observer?.observe(elementToObserveRef.current)
       }
       
-   }, [])
+   }, [observer])
 
 
    return (

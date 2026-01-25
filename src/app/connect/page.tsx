@@ -1,14 +1,14 @@
 "use client"
-import React, { useState } from 'react'
+import React from 'react'
 import Header from '@/components/Header/Header'
 import Footer from '@/components/Footer'
 import Sidebar from '@/components/Sidebar'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+// import { Input } from '@/components/ui/input'
+// import { Button } from '@/components/ui/button'
 import { TfiEmail } from "react-icons/tfi";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import Link from 'next/link'
+// import Link from 'next/link'
 
 const Connect = () => {
 

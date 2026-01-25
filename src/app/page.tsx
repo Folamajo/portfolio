@@ -2,65 +2,63 @@
 import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
 import Sidebar from "@/components/Sidebar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
+
+// import { useState } from "react"
 import Link from "next/link"
 
 export default function Home() {
 
-   const [email, setEmail] = useState<string>("");
-   const [errorMessage, setErrorMessage] = useState<string>("")
+   // const [email, setEmail] = useState<string>("");
+   // const [errorMessage, setErrorMessage] = useState<string>("")
 
-   type Status = "idle" | "loading" | "success" | "already" | "error"
-   const [status, setStatus] = useState<Status>("idle")
+   // type Status = "idle" | "loading" | "success" | "already" | "error"
+   // const [status, setStatus] = useState<Status>("idle")
 
-   const handleSubscribe = async ()=>{
-      setErrorMessage("")
-      if(email === "" || !email){
-         setErrorMessage("Please enter your email.")
-         return;
-      }
+   // const handleSubscribe = async ()=>{
+   //    setErrorMessage("")
+   //    if(email === "" || !email){
+   //       setErrorMessage("Please enter your email.")
+   //       return;
+   //    }
 
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   //    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      const validateEmail = (emailInput:string):boolean => {
-         return emailRegex.test(emailInput)
-      }
+   //    const validateEmail = (emailInput:string):boolean => {
+   //       return emailRegex.test(emailInput)
+   //    }
 
-      let normalisedEmail;
-      if (!validateEmail(email)){
-         setErrorMessage("Please enter a valid email.")
-         return
-      }
-      else {
-         normalisedEmail = email.trim().toLowerCase()
-      }
+   //    let normalisedEmail;
+   //    if (!validateEmail(email)){
+   //       setErrorMessage("Please enter a valid email.")
+   //       return
+   //    }
+   //    else {
+   //       normalisedEmail = email.trim().toLowerCase()
+   //    }
 
 
 
-      const response = await fetch("/api/subscribe", {
-         method: "POST",
-         headers : { "Content-Type" : "application/json" },
-         body: JSON.stringify({email : normalisedEmail})
+   //    const response = await fetch("/api/subscribe", {
+   //       method: "POST",
+   //       headers : { "Content-Type" : "application/json" },
+   //       body: JSON.stringify({email : normalisedEmail})
 
-      })
+   //    })
 
-      const result = await response.json();
+   //    const result = await response.json();
 
-      if (result.code === 200){
-         setStatus("already")
-      }
-      else if (result.code === 201){
-         setStatus("success")
-      }
-      else {
-         setStatus("error")
+   //    if (result.code === 200){
+   //       setStatus("already")
+   //    }
+   //    else if (result.code === 201){
+   //       setStatus("success")
+   //    }
+   //    else {
+   //       setStatus("error")
          
-      }
+   //    }
 
-   }
+   // }
 
    return (
       <div 
@@ -86,7 +84,7 @@ export default function Home() {
                
                <p className="mt-4">{"What you’ll find here:"} </p>
                <ul className ='pl-5 list-disc'>
-                  <li>End-to-end projects I'm actively building</li>
+                  <li>{"End-to-end projects I'm actively building"}</li>
                   <li>Deep dives into architecture, applied machine learning, and engineering decisions</li>
                   <li>{"Case study–style reflections on what failed, what scaled and why"}</li>
                </ul>

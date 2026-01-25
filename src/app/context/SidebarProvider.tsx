@@ -46,7 +46,7 @@ const SidebarProvider = ({children} : {children: ReactNode})  => {
       if( isSidebarOpen === true){
          close()
       }
-   }, [pathname])
+   }, [pathname, isSidebarOpen])
 
 
 
