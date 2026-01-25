@@ -14,9 +14,9 @@ const page = () => {
          </header>
 
          <main className=' main_content max-w-[58em] mb-6 px-4 w-full '>
-            <h1 className='font-bold text-3xl '>Projects</h1>
-            <div>
-
+            <h1 className='font-extrabold text-2xl '>projects </h1>
+            <div className="mt-4">
+               coming soon ...
             </div>
          </main>
 
