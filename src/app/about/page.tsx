@@ -37,7 +37,7 @@ const About = () => {
 
             </div>
             <div className="mt-6 border-b pb-6 border-b-gray-300 dark:border-b-gray-700 ">
-               <h1 className="text-2xl font-extrabold">tl;dr</h1>
+               <h1 className="text-xl font-extrabold">tl;dr</h1>
                <ul className ='pl-5 list-disc mt-4'>
                   <li>Software engineering moving into AI</li>
                   <li>Learns by building and owning full systems</li>
@@ -46,7 +46,7 @@ const About = () => {
             </div>
             
             <div className=" border-b-gray-300 mt-6">
-               <h1 className="text-2xl font-extrabold">current tools </h1>
+               <h1 className="text-xl font-extrabold">current tools </h1>
                <ul className ='mt-4'>
                   <li><strong className="font-extrabold">Programming</strong> Python, JS, TS</li>
                   <li><strong className="font-extrabold">AI/ML</strong> PyTorch, scikit-learn, OpenAI APIs, embeddings, LLM-based analysis pipelines</li>

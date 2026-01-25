@@ -12,7 +12,7 @@ const Menu = ({ setPageName } : MenuProps) => {
    const observer = useContext(ObserverContext)
    
    return (
-      <div className= ' flex justify-center items-center relative ' >
+      <div className= 'flex justify-center items-center relative' >
          <div className="w-[58em] relative flex justify-center items-center py-6  ">
             {
                !observer?.isInView ? <div className="absolute left-2 font-bold text-lg px-2">Fola Majoyegbe</div> : ""
