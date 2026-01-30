@@ -3,7 +3,7 @@ import Header from "@/components/Header/Header"
 import Footer from "@/components/Footer"
 import Sidebar from "@/components/Sidebar"
 
-// import { useState } from "react"
+import { useState } from "react"
 import Link from "next/link"
 
 export default function Home() {

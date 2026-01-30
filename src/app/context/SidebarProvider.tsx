@@ -11,9 +11,10 @@ type SidebarConfig = {
 }
 
 export const SidebarContext = createContext<SidebarConfig>({isSidebarOpen: false, toggle: () => {}, close: () => {}})
-
+//Bug in Side bar not opening up
 
 const SidebarProvider = ({children} : {children: ReactNode})  => {
+   
    const[isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
    const [windowWidth, setWindowWidth] = useState<number>(0)
 
@@ -34,6 +35,7 @@ const SidebarProvider = ({children} : {children: ReactNode})  => {
 
 
    const toggle = () => {
+      console.log("hi")
       setIsSidebarOpen(prev => !prev)
    }
 
