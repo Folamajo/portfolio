@@ -79,7 +79,32 @@ const Connect = () => {
                   <a href ="https://www.linkedin.com/in/fola-majoyegbe-85a19b98/" target="_blank" rel="no_opener noreferer"> <FaLinkedin className="text-5xl hover:opacity-80 cursor-pointer"/></a>
                   <a href="https://github.com/Folamajo" target="_blank" rel="no_opener noreferer"><FaGithub className="text-5xl hover:opacity-80 cursor-pointer"/></a>
                </ul>
-               {/* <div className="border-b-1  mt-10 border-gray-300 dark:border-gray-500"></div> */}
+              
+            </div>
+         </main>
+         <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
+            <div className="w-[60em] ">
+               <Footer />
+            </div>
+         </footer>
+      </div>
+      
+  )
+}
+
+export default Connect
+
+
+
+
+
+
+
+
+
+
+
+ {/* <div className="border-b-1  mt-10 border-gray-300 dark:border-gray-500"></div> */}
 
                {/* {
                   status === "idle" && (
@@ -153,16 +178,3 @@ const Connect = () => {
                      </div>
                   )
                } */}
-            </div>
-         </main>
-         <footer className=" px-4 w-full flex justify-center mt-auto py-4 bg-gray-50 dark:bg-black">
-            <div className="w-[60em] ">
-               <Footer />
-            </div>
-         </footer>
-      </div>
-      
-  )
-}
-
-export default Connect
