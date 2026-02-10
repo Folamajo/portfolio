@@ -24,7 +24,7 @@ const SidebarProvider = ({children} : {children: ReactNode})  => {
       return ()=> window.removeEventListener("resize", handleResize)
    }, [])
    
-
+//Fix Side bar provider bug
    useEffect(()=> {
       if(windowWidth > 991){
          setIsSidebarOpen(false)
